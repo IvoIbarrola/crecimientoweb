@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Crecimiento Web</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+line-height:1.6;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+position:sticky;
+top:0;
+background:#0f172a;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#38bdf8;
+}
+
+section{
+padding:100px 10%;
+}
+
+.section-title{
+font-size:36px;
+margin-bottom:20px;
+text-align:center;
+}
+
+.section-sub{
+text-align:center;
+max-width:700px;
+margin:auto;
+opacity:0.8;
+margin-bottom:60px;
+}
+
+/* HERO */
+
+.hero{
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:40px;
+}
+
+.hero h1{
+font-size:46px;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+opacity:0.85;
+margin-bottom:30px;
+}
+
+.hero button{
+padding:15px 30px;
+border:none;
+border-radius:8px;
+background:#38bdf8;
+color:#000;
+font-size:16px;
+cursor:pointer;
+}
+
+.hero-card{
+background:linear-gradient(135deg,#1e293b,#020617);
+padding:40px;
+border-radius:16px;
+}
+
+/* CARDS */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#1e293b;
+padding:30px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+background:#263449;
+}
+
+.card h3{
+color:#38bdf8;
+margin-bottom:10px;
+}
+
+.price{
+margin-top:15px;
+color:#38bdf8;
+font-weight:bold;
+}
+
+/* PROCESO */
+
+.process{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.step{
+background:#1e293b;
+padding:30px;
+border-radius:12px;
+}
+
+.step span{
+font-size:26px;
+font-weight:bold;
+color:#38bdf8;
+}
+
+/* PROYECTOS */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.project{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+}
+
+.project a{
+display:inline-block;
+margin-top:15px;
+color:#38bdf8;
+text-decoration:none;
+}
+
+/* DEMOS */
+
+.demos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.demo{
+background:#1e293b;
+padding:25px;
+border-radius:12px;
+}
+
+.demo a{
+display:inline-block;
+margin-top:15px;
+color:#38bdf8;
+text-decoration:none;
+}
+
+/* FOOTER */
+
+footer{
+padding:40px 10%;
+background:#020617;
+text-align:center;
+opacity:0.7;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+width:60px;
+height:60px;
+background:#25D366;
+color:white;
+font-size:28px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+text-decoration:none;
+box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+.whatsapp:hover{
+transform:scale(1.1);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<div class="logo">Crecimiento Web</div>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div>
+
+<h1>Creación de páginas web y sistemas para hacer crecer tu negocio</h1>
+
+<p>
+En Crecimiento Web desarrollamos páginas web modernas y sistemas digitales
+para pequeñas empresas que desean mejorar su presencia online, atraer nuevos
+clientes y optimizar su forma de trabajar.
+</p>
+
+<button>Ver servicios</button>
+
+</div>
+
+<div class="hero-card">
+
+<h3>Tu negocio también necesita presencia digital</h3>
+
+<p>
+Hoy en día la mayoría de los clientes buscan información en internet antes
+de elegir un servicio o producto. Una página web clara y profesional puede
+marcar la diferencia entre ganar o perder un cliente.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- SERVICIOS -->
+
+<section>
+
+<h2 class="section-title">Servicios</h2>
+
+<p class="section-sub">
+Ofrecemos diferentes soluciones digitales según las necesidades
+de cada negocio.
+</p>
+
+<div class="services">
+
+<div class="card">
+<h3>Landing Page / Página web</h3>
+<p>
+Sitios web informativos diseñados para mostrar tu negocio,
+servicios o productos de forma profesional.
+</p>
+<div class="price">Precio aproximado: $120 – $200 USD</div>
+</div>
+
+<div class="card">
+<h3>Sistemas de gestión</h3>
+<p>
+Sistemas personalizados para administrar clientes,
+productos, ventas o información interna del negocio.
+</p>
+<div class="price">Precio aproximado: $300 – $800 USD</div>
+</div>
+
+<div class="card">
+<h3>Sistemas de automatización</h3>
+<p>
+Automatización de procesos y tareas repetitivas para
+optimizar el funcionamiento del negocio.
+</p>
+<div class="price">Precio aproximado: $200 – $600 USD</div>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NEGOCIOS -->
+
+<section>
+
+<h2 class="section-title">Negocios que ayudamos</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Comercios locales</h3>
+<p>
+Tiendas, talleres o negocios que quieren atraer más clientes
+desde internet.
+</p>
+</div>
+
+<div class="card">
+<h3>Profesionales</h3>
+<p>
+Páginas web para mostrar servicios profesionales
+y generar confianza en nuevos clientes.
+</p>
+</div>
+
+<div class="card">
+<h3>Emprendedores</h3>
+<p>
+Soluciones digitales para emprendimientos que desean
+comenzar su presencia online.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- COMO TRABAJAMOS -->
+
+<section>
+
+<h2 class="section-title">Cómo trabajamos</h2>
+
+<div class="process">
+
+<div class="step">
+<span>1</span>
+<h3>Análisis</h3>
+<p>Estudiamos las necesidades del negocio.</p>
+</div>
+
+<div class="step">
+<span>2</span>
+<h3>Diseño</h3>
+<p>Diseñamos la estructura y apariencia del proyecto.</p>
+</div>
+
+<div class="step">
+<span>3</span>
+<h3>Desarrollo</h3>
+<p>Construimos el sitio o sistema utilizando tecnología moderna.</p>
+</div>
+
+<div class="step">
+<span>4</span>
+<h3>Entrega</h3>
+<p>El proyecto queda listo para ser utilizado por el cliente.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- POR QUE ELEGIRNOS -->
+
+<section>
+
+<h2 class="section-title">Por qué elegirnos</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Diseño moderno</h3>
+<p>Sitios web con apariencia profesional.</p>
+</div>
+
+<div class="card">
+<h3>Soluciones personalizadas</h3>
+<p>Cada proyecto se adapta al negocio.</p>
+</div>
+
+<div class="card">
+<h3>Tecnología actual</h3>
+<p>Desarrollo optimizado para rendimiento y estabilidad.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EXPERIENCIA -->
+
+<section>
+
+<h2 class="section-title">Experiencia</h2>
+
+<div class="projects">
+
+<div class="project">
+<h3>Página web para negocio local</h3>
+<p>Diseño de sitio web para comercio.</p>
+<a href="#">Ver proyecto</a>
+</div>
+
+<div class="project">
+<h3>Sistema de gestión</h3>
+<p>Aplicación web para administrar clientes.</p>
+<a href="#">Ver proyecto</a>
+</div>
+
+<div class="project">
+<h3>Landing page comercial</h3>
+<p>Página enfocada en captar clientes.</p>
+<a href="#">Ver proyecto</a>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DEMOSTRACIONES -->
+
+<section>
+
+<h2 class="section-title">Demostraciones</h2>
+
+<p class="section-sub">
+Ejemplos de páginas web diseñadas para diferentes tipos de negocios.
+</p>
+
+<div class="demos">
+
+<div class="demo">
+<h3>Web para restaurante</h3>
+<p>Ejemplo de página moderna para restaurantes.</p>
+<a href="demos/demo-restaurante.html">Ver demostración</a>
+</div>
+
+<div class="demo">
+<h3>Web para taller mecánico</h3>
+<p>Ejemplo de sitio para servicios técnicos.</p>
+<a href="demos/demo-taller.html">Ver demostración</a>
+</div>
+
+<div class="demo">
+<h3>Web para peluquería</h3>
+<p>Ejemplo de sitio para negocios de estética.</p>
+<a href="demos/demo-peluqueria.html">Ver demostración</a>
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>
+© 2026 Crecimiento Web — Desarrollo web para pequeñas empresas
+</p>
+
+</footer>
+
+
+<a href="https://wa.me/5491112345678?text=Hola%20quiero%20informacion%20sobre%20desarrollo%20web" class="whatsapp">
+💬
+</a>
+
+</body>
+</html>
