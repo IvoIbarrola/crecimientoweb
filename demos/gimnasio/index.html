@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Concepto de gimnasio con servicios, precios de muestra y test para recomendar una opción inicial.">
+  <title>Ritmo Club | Concepto de gimnasio</title>
+  <link rel="stylesheet" href="../shared/demo.css">
+  <style>body { --hero-image: url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=85"); }</style>
+</head>
+<body data-demo="fitness">
+  <div class="demo-notice">Concepto ficticio · Planes, precios y dirección ilustrativos</div>
+  <header class="demo-header"><nav class="wrap nav" aria-label="Navegación principal">
+    <a class="brand" href="#inicio">RITMO / CLUB</a>
+    <div class="nav-links"><a href="#planes">Planes</a><a href="#test">Encuentra tu ritmo</a><a href="#espacio">El club</a></div>
+    <a class="button-small" data-wa="Hola, vi la demo del gimnasio y quiero consultar por una web para mi negocio." href="#">Consultar</a>
+  </nav></header>
+  <main>
+    <section class="hero" id="inicio"><div class="wrap hero-content">
+      <span class="eyebrow">Movimiento a tu manera</span>
+      <h1>Empieza donde estás.</h1>
+      <p>Un espacio para entrenar con energía, acompañamiento y objetivos que se sienten posibles.</p>
+      <a class="button" href="#test">Encontrar mi plan ↓</a>
+    </div></section>
+    <section class="section" id="planes"><div class="wrap">
+      <div class="section-heading"><span class="eyebrow">Planes · precios de ejemplo</span><h2>Tu rutina, tu ritmo.</h2><p>Los planes y valores son ficticios. El panel permite probar cómo se actualizarían los precios.</p></div>
+      <div class="grid">
+        <article class="card"><img class="card-image" src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=900&q=80" alt="Entrenamiento en gimnasio"><div class="card-body"><span class="demo-label">Flexibilidad</span><h3>Movimiento</h3><p>Sala de entrenamiento y acceso a clases seleccionadas.</p><div class="card-meta"><span>Mensual</span><strong class="price" data-price-value="move">$25.000</strong></div></div></article>
+        <article class="card"><img class="card-image" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=80" alt="Persona entrenando fuerza"><div class="card-body"><span class="demo-label">Acompañamiento</span><h3>Constancia</h3><p>Entrenamiento, evaluación inicial y seguimiento de rutina.</p><div class="card-meta"><span>Mensual</span><strong class="price" data-price-value="steady">$36.000</strong></div></div></article>
+        <article class="card"><img class="card-image" src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80" alt="Clase grupal de movimiento"><div class="card-body"><span class="demo-label">Clases</span><h3>En equipo</h3><p>Clases grupales para sumar movimiento y comunidad.</p><div class="card-meta"><span>Mensual</span><strong class="price" data-price-value="team">$31.000</strong></div></div></article>
+      </div>
+      <div class="admin-actions" style="justify-content:center;margin-top:25px"><button class="button-outline" type="button" data-admin-toggle="price-admin" aria-expanded="false">Probar edición de precios</button></div>
+      <section class="admin-panel" id="price-admin" hidden><span class="demo-label">Solo demostración</span><h3>Actualizar precios de los planes</h3><p>Solo cambia la vista de esta página durante la visita.</p>
+        <form data-price-editor><div class="price-editor">
+          <div class="price-editor-row"><label for="price-move">Movimiento</label><input id="price-move" data-price-input="move" type="number" min="0" value="25000"></div>
+          <div class="price-editor-row"><label for="price-steady">Constancia</label><input id="price-steady" data-price-input="steady" type="number" min="0" value="36000"></div>
+          <div class="price-editor-row"><label for="price-team">En equipo</label><input id="price-team" data-price-input="team" type="number" min="0" value="31000"></div>
+        </div><div class="admin-actions"><button class="button-small" type="submit">Aplicar cambios a la demo</button></div><p class="status" data-price-status aria-live="polite"></p></form>
+      </section>
+    </div></section>
+    <section class="section section-soft" id="test"><div class="wrap">
+      <div class="section-heading"><span class="eyebrow">Un test breve · recomendación ilustrativa</span><h2>¿Qué te gustaría conseguir?</h2><p>Responde estas preguntas para ver una orientación de ejemplo. No reemplaza una evaluación profesional.</p></div>
+      <form class="quiz" id="fitness-quiz">
+        <div class="field"><label for="goal">¿Cuál es tu objetivo principal?</label><select id="goal" name="goal" required><option value="">Elige una opción</option><option value="fuerza">Ganar fuerza y técnica</option><option value="energia">Tener más energía y movimiento</option><option value="habito">Crear un hábito saludable</option></select></div>
+        <div class="field"><label for="experience">¿Cómo describirías tu experiencia?</label><select id="experience" name="experience" required><option value="">Elige una opción</option><option value="Estoy empezando">Estoy empezando</option><option value="Entreno ocasionalmente">Entreno ocasionalmente</option><option value="Entreno con regularidad">Entreno con regularidad</option></select></div>
+        <button class="button" type="submit">Ver recomendación</button>
+        <div class="quiz-result" id="quiz-result" hidden aria-live="polite"><span class="demo-label">Orientación de muestra, no asesoramiento profesional</span><h3 id="quiz-result-title"></h3><p id="quiz-result-copy"></p><a class="button-small" id="quiz-contact" data-wa="Hola, hice el test y quiero consultar por una opción." href="#">Consultar por WhatsApp ↗</a></div>
+      </form>
+    </div></section>
+    <section class="section" id="espacio"><div class="wrap split"><div><span class="demo-label">Ritmo Club · negocio ficticio</span><h2>Un lugar para volver a moverte.</h2><p>En esta propuesta, los planes, el test de objetivos y los canales de consulta se reúnen para ayudar a cada visitante a dar el primer paso.</p><div class="info-grid"><div class="info-tile"><span>Horarios de muestra</span><strong>Lun–Vie · 7 a 22 h</strong></div><div class="info-tile"><span>Ubicación ficticia</span><strong>Belgrano, Buenos Aires</strong></div><div class="info-tile"><span>Primera consulta</span><strong>Por WhatsApp</strong></div></div></div><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1100&q=85" alt="Sala de gimnasio luminosa, imagen ilustrativa"></div></section>
+    <section class="cta-band"><div class="wrap"><span class="eyebrow">Ideas digitales para tu negocio</span><h2>Convirtamos tu propuesta en una experiencia clara.</h2><p>Podemos conversar sobre una web hecha a la medida de tus clientes.</p><a class="button" data-wa="Hola, vi la demo del gimnasio y quiero conversar sobre una web para mi negocio." href="#">Consultar por mi proyecto ↗</a></div></section>
+  </main>
+  <footer class="demo-footer"><div class="wrap footer-row"><p>Ritmo Club · Concepto ficticio</p><a class="back-link" href="../../index.html">← Volver a Crecimiento Web</a></div></footer>
+  <a class="whatsapp-float" data-wa="Hola, vi la demo del gimnasio y quiero consultar por una web." href="#" aria-label="Consultar por WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.25 11.5a8.25 8.25 0 0 1-12.2 7.25L3.75 20l1.2-4.15A8.25 8.25 0 1 1 20.25 11.5Z"/><path d="M9 8.1c-.4-.4-1-.35-1.35.1-.55.7-.7 1.55-.42 2.4a9.25 9.25 0 0 0 6.15 6.15c.85.28 1.7.13 2.4-.42.45-.35.5-.95.1-1.35l-1.3-1.3a.95.95 0 0 0-1.2-.13l-.85.55a7.5 7.5 0 0 1-2.65-2.65l.55-.85a.95.95 0 0 0-.13-1.2L9 8.1Z"/></svg></a>
+  <script src="../shared/demo.js" defer></script>
+</body>
+</html>

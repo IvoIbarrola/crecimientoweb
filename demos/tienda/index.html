@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Concepto de tienda online de indumentaria con catálogo, filtros y carrito de muestra.">
+  <title>Sur Estudio | Concepto de tienda</title>
+  <link rel="stylesheet" href="../shared/demo.css">
+  <style>body { --hero-image: url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=85"); }</style>
+</head>
+<body data-demo="fashion">
+  <div class="demo-notice">Tienda de muestra · Catálogo y carrito demostrativos, sin pagos reales</div>
+  <header class="demo-header"><nav class="wrap nav" aria-label="Navegación principal">
+    <a class="brand" href="#inicio">SUR ESTUDIO</a>
+    <div class="nav-links"><a href="#coleccion">Colección</a><a href="#marca">La marca</a><a href="#contacto">Contacto</a></div>
+    <a class="button-small" href="#carrito">Bolsa <span data-cart-count>0</span></a>
+  </nav></header>
+  <main>
+    <section class="hero" id="inicio"><div class="wrap hero-content">
+      <span class="eyebrow">Colección otoño · concepto de muestra</span>
+      <h1>Vestir lo que ya eres.</h1>
+      <p>Prendas versátiles, texturas nobles y una selección pensada para acompañar todos tus días.</p>
+      <a class="button" href="#coleccion">Explorar colección ↓</a>
+    </div></section>
+    <section class="section" id="coleccion"><div class="wrap">
+      <div class="section-heading"><span class="eyebrow">Selección de temporada</span><h2>Piezas para vivirlas.</h2><p>Productos, talles, colores y precios son ficticios. El catálogo se puede adaptar a tu marca.</p></div>
+      <div class="filter-bar" role="group" aria-label="Filtrar prendas">
+        <button class="filter-button" type="button" data-filter="todos" aria-pressed="true">Todo</button>
+        <button class="filter-button" type="button" data-filter="abrigos" aria-pressed="false">Abrigos</button>
+        <button class="filter-button" type="button" data-filter="tops" aria-pressed="false">Tops</button>
+        <button class="filter-button" type="button" data-filter="pantalones" aria-pressed="false">Pantalones</button>
+        <button class="filter-button" type="button" data-filter="accesorios" aria-pressed="false">Accesorios</button>
+      </div>
+      <div class="cart-summary" id="carrito" hidden><span>Bolsa de muestra · <strong data-cart-count>0</strong> prendas seleccionadas</span><a class="button-small" id="cart-contact" href="https://wa.me/5491168253989" target="_blank" rel="noopener noreferrer">Consultar selección ↗</a></div>
+      <div class="grid">
+        <article class="card product-card" data-product="abrigos" data-product-card data-product-name="Campera Bruma">
+          <img class="card-image" src="https://images.unsplash.com/photo-1548126032-079a0fb0099d?auto=format&fit=crop&w=900&q=85" alt="Campera de abrigo, imagen ilustrativa">
+          <div class="card-body"><span class="demo-label">Abrigos</span><h3>Campera Bruma</h3><p>Una capa liviana para los días frescos.</p><div class="card-meta"><span>Precio de muestra</span><strong class="price">$68.000</strong></div>
+            <div class="product-options"><div><span class="product-options-label">Talle: <strong data-selected-size></strong></span><div class="choice-row" data-choice-group="size"><button class="choice-button" type="button" data-choice="S" aria-pressed="false">S</button><button class="choice-button" type="button" data-choice="M" aria-pressed="false">M</button><button class="choice-button" type="button" data-choice="L" aria-pressed="false">L</button></div></div><div><span class="product-options-label">Color: <strong data-selected-color></strong></span><div class="choice-row" data-choice-group="color"><button class="choice-button" type="button" data-choice="Arena" aria-pressed="false">Arena</button><button class="choice-button" type="button" data-choice="Oliva" aria-pressed="false">Oliva</button></div></div></div>
+            <button class="button-small" type="button" data-add-to-cart>Agregar a bolsa</button><p class="status" data-product-status aria-live="polite"></p>
+          </div>
+        </article>
+        <article class="card product-card" data-product="tops" data-product-card data-product-name="Camisa Alba">
+          <img class="card-image" src="https://images.unsplash.com/photo-1598554747436-c9293d6a588f?auto=format&fit=crop&w=900&q=85" alt="Camisa clara de estilo casual">
+          <div class="card-body"><span class="demo-label">Tops</span><h3>Camisa Alba</h3><p>Algodón suave y corte relajado para combinar.</p><div class="card-meta"><span>Precio de muestra</span><strong class="price">$39.500</strong></div>
+            <div class="product-options"><div><span class="product-options-label">Talle: <strong data-selected-size></strong></span><div class="choice-row" data-choice-group="size"><button class="choice-button" type="button" data-choice="S" aria-pressed="false">S</button><button class="choice-button" type="button" data-choice="M" aria-pressed="false">M</button><button class="choice-button" type="button" data-choice="L" aria-pressed="false">L</button></div></div><div><span class="product-options-label">Color: <strong data-selected-color></strong></span><div class="choice-row" data-choice-group="color"><button class="choice-button" type="button" data-choice="Blanco" aria-pressed="false">Blanco</button><button class="choice-button" type="button" data-choice="Celeste" aria-pressed="false">Celeste</button></div></div></div>
+            <button class="button-small" type="button" data-add-to-cart>Agregar a bolsa</button><p class="status" data-product-status aria-live="polite"></p>
+          </div>
+        </article>
+        <article class="card product-card" data-product="abrigos" data-product-card data-product-name="Sweater Nube">
+          <img class="card-image" src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=900&q=85" alt="Sweater de punto de color claro">
+          <div class="card-body"><span class="demo-label">Abrigos</span><h3>Sweater Nube</h3><p>Punto liviano, textura suave y silueta clásica.</p><div class="card-meta"><span>Precio de muestra</span><strong class="price">$52.000</strong></div>
+            <div class="product-options"><div><span class="product-options-label">Talle: <strong data-selected-size></strong></span><div class="choice-row" data-choice-group="size"><button class="choice-button" type="button" data-choice="S" aria-pressed="false">S</button><button class="choice-button" type="button" data-choice="M" aria-pressed="false">M</button><button class="choice-button" type="button" data-choice="L" aria-pressed="false">L</button></div></div><div><span class="product-options-label">Color: <strong data-selected-color></strong></span><div class="choice-row" data-choice-group="color"><button class="choice-button" type="button" data-choice="Crudo" aria-pressed="false">Crudo</button><button class="choice-button" type="button" data-choice="Bordó" aria-pressed="false">Bordó</button></div></div></div>
+            <button class="button-small" type="button" data-add-to-cart>Agregar a bolsa</button><p class="status" data-product-status aria-live="polite"></p>
+          </div>
+        </article>
+        <article class="card product-card" data-product="accesorios" data-product-card data-product-name="Bolso Orilla">
+          <img class="card-image" src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=85" alt="Bolso de mano de diseño">
+          <div class="card-body"><span class="demo-label">Accesorios</span><h3>Bolso Orilla</h3><p>Un esencial amplio para acompañar la rutina.</p><div class="card-meta"><span>Precio de muestra</span><strong class="price">$44.000</strong></div>
+            <div class="product-options"><div><span class="product-options-label">Talle: <strong data-selected-size></strong></span><div class="choice-row" data-choice-group="size"><button class="choice-button" type="button" data-choice="Único" aria-pressed="false">Único</button></div></div><div><span class="product-options-label">Color: <strong data-selected-color></strong></span><div class="choice-row" data-choice-group="color"><button class="choice-button" type="button" data-choice="Marrón" aria-pressed="false">Marrón</button><button class="choice-button" type="button" data-choice="Negro" aria-pressed="false">Negro</button></div></div></div>
+            <button class="button-small" type="button" data-add-to-cart>Agregar a bolsa</button><p class="status" data-product-status aria-live="polite"></p>
+          </div>
+        </article>
+        <article class="card product-card" data-product="tops" data-product-card data-product-name="Top Calma">
+          <img class="card-image" src="https://images.unsplash.com/photo-1551163943-3f6a855d1153?auto=format&fit=crop&w=900&q=85" alt="Top de punto en tono neutro">
+          <div class="card-body"><span class="demo-label">Tops</span><h3>Top Calma</h3><p>Una prenda esencial de textura suave y calce cómodo.</p><div class="card-meta"><span>Precio de muestra</span><strong class="price">$28.500</strong></div>
+            <div class="product-options"><div><span class="product-options-label">Talle: <strong data-selected-size></strong></span><div class="choice-row" data-choice-group="size"><button class="choice-button" type="button" data-choice="S" aria-pressed="false">S</button><button class="choice-button" type="button" data-choice="M" aria-pressed="false">M</button><button class="choice-button" type="button" data-choice="L" aria-pressed="false">L</button></div></div><div><span class="product-options-label">Color: <strong data-selected-color></strong></span><div class="choice-row" data-choice-group="color"><button class="choice-button" type="button" data-choice="Negro" aria-pressed="false">Negro</button><button class="choice-button" type="button" data-choice="Natural" aria-pressed="false">Natural</button></div></div></div>
+            <button class="button-small" type="button" data-add-to-cart>Agregar a bolsa</button><p class="status" data-product-status aria-live="polite"></p>
+          </div>
+        </article>
+        <article class="card product-card" data-product="abrigos" data-product-card data-product-name="Trench Horizonte">
+          <img class="card-image" src="https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=900&q=85" alt="Abrigo largo de corte clásico">
+          <div class="card-body"><span class="demo-label">Abrigos</span><h3>Trench Horizonte</h3><p>Una silueta clásica para sumar una capa liviana.</p><div class="card-meta"><span>Precio de muestra</span><strong class="price">$79.000</strong></div>
+            <div class="product-options"><div><span class="product-options-label">Talle: <strong data-selected-size></strong></span><div class="choice-row" data-choice-group="size"><button class="choice-button" type="button" data-choice="S" aria-pressed="false">S</button><button class="choice-button" type="button" data-choice="M" aria-pressed="false">M</button><button class="choice-button" type="button" data-choice="L" aria-pressed="false">L</button></div></div><div><span class="product-options-label">Color: <strong data-selected-color></strong></span><div class="choice-row" data-choice-group="color"><button class="choice-button" type="button" data-choice="Arena" aria-pressed="false">Arena</button><button class="choice-button" type="button" data-choice="Negro" aria-pressed="false">Negro</button></div></div></div>
+            <button class="button-small" type="button" data-add-to-cart>Agregar a bolsa</button><p class="status" data-product-status aria-live="polite"></p>
+          </div>
+        </article>
+        <article class="card product-card" data-product="accesorios" data-product-card data-product-name="Cinturón Tierra">
+          <img class="card-image" src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?auto=format&fit=crop&w=900&q=85" alt="Accesorio de moda, imagen ilustrativa">
+          <div class="card-body"><span class="demo-label">Accesorios</span><h3>Cinturón Tierra</h3><p>Un detalle simple para completar cualquier conjunto.</p><div class="card-meta"><span>Precio de muestra</span><strong class="price">$19.000</strong></div>
+            <div class="product-options"><div><span class="product-options-label">Talle: <strong data-selected-size></strong></span><div class="choice-row" data-choice-group="size"><button class="choice-button" type="button" data-choice="Único" aria-pressed="false">Único</button></div></div><div><span class="product-options-label">Color: <strong data-selected-color></strong></span><div class="choice-row" data-choice-group="color"><button class="choice-button" type="button" data-choice="Suela" aria-pressed="false">Suela</button><button class="choice-button" type="button" data-choice="Negro" aria-pressed="false">Negro</button></div></div></div>
+            <button class="button-small" type="button" data-add-to-cart>Agregar a bolsa</button><p class="status" data-product-status aria-live="polite"></p>
+          </div>
+        </article>
+        <article class="card product-card" data-product="pantalones" data-product-card data-product-name="Pantalón Duna">
+          <img class="card-image" src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=900&q=85" alt="Prenda de vestir de corte relajado">
+          <div class="card-body"><span class="demo-label">Pantalones</span><h3>Pantalón Duna</h3><p>Caída relajada y cintura cómoda para todos los días.</p><div class="card-meta"><span>Precio de muestra</span><strong class="price">$47.000</strong></div>
+            <div class="product-options"><div><span class="product-options-label">Talle: <strong data-selected-size></strong></span><div class="choice-row" data-choice-group="size"><button class="choice-button" type="button" data-choice="S" aria-pressed="false">S</button><button class="choice-button" type="button" data-choice="M" aria-pressed="false">M</button><button class="choice-button" type="button" data-choice="L" aria-pressed="false">L</button></div></div><div><span class="product-options-label">Color: <strong data-selected-color></strong></span><div class="choice-row" data-choice-group="color"><button class="choice-button" type="button" data-choice="Arena" aria-pressed="false">Arena</button><button class="choice-button" type="button" data-choice="Negro" aria-pressed="false">Negro</button></div></div></div>
+            <button class="button-small" type="button" data-add-to-cart>Agregar a bolsa</button><p class="status" data-product-status aria-live="polite"></p>
+          </div>
+        </article>
+      </div>
+    </div></section>
+    <section class="section section-soft" id="marca"><div class="wrap split" data-reveal><div><span class="demo-label">Sur Estudio · marca ficticia</span><h2>Menos prisa. Más intención.</h2><p>Una tienda online puede combinar una identidad propia con herramientas simples para explorar productos y consultar una compra. Este carrito es solo una muestra y no procesa pagos.</p><a class="button-outline" data-wa="Hola, vi la demo de tienda de indumentaria y quiero consultar por una tienda online." href="#">Consultar por una tienda</a></div><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1100&q=85" alt="Personas eligiendo prendas, imagen ilustrativa"></div></section>
+    <section class="cta-band" id="contacto"><div class="wrap"><span class="eyebrow">Tu catálogo, tu estilo</span><h2>Mostremos lo que hace única a tu marca.</h2><p>La tienda, las categorías y el recorrido de compra se diseñan a tu medida.</p><a class="button" data-wa="Hola, vi la demo de tienda de indumentaria y quiero conversar sobre mi proyecto." href="#">Consultar por mi proyecto ↗</a></div></section>
+  </main>
+  <footer class="demo-footer"><div class="wrap footer-row"><p>Sur Estudio · Concepto ficticio</p><a class="back-link" href="../../index.html">← Volver a Crecimiento Web</a></div></footer>
+  <a class="whatsapp-float" data-wa="Hola, vi la demo de tienda y quiero consultar por una tienda online." href="#" aria-label="Consultar por WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.25 11.5a8.25 8.25 0 0 1-12.2 7.25L3.75 20l1.2-4.15A8.25 8.25 0 1 1 20.25 11.5Z"/><path d="M9 8.1c-.4-.4-1-.35-1.35.1-.55.7-.7 1.55-.42 2.4a9.25 9.25 0 0 0 6.15 6.15c.85.28 1.7.13 2.4-.42.45-.35.5-.95.1-1.35l-1.3-1.3a.95.95 0 0 0-1.2-.13l-.85.55a7.5 7.5 0 0 1-2.65-2.65l.55-.85a.95.95 0 0 0-.13-1.2L9 8.1Z"/></svg></a>
+  <script src="../shared/demo.js" defer></script>
+</body>
+</html>
