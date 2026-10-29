@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Concepto de web para taller mecánico con servicios, precios editables y contacto por WhatsApp.">
+  <title>Estación Motor | Concepto de taller</title>
+  <link rel="stylesheet" href="../shared/demo.css">
+  <style>body { --hero-image: url("https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1800&q=85"); }</style>
+</head>
+<body data-demo="garage">
+  <div class="demo-notice">Concepto ficticio · Servicios, precios y dirección ilustrativos</div>
+  <header class="demo-header"><nav class="wrap nav" aria-label="Navegación principal">
+    <a class="brand" href="#inicio">ESTACIÓN / MOTOR</a>
+    <div class="nav-links"><a href="#servicios">Servicios</a><a href="#taller">El taller</a><a href="#ubicacion">Ubicación</a></div>
+    <a class="button-small" data-wa="Hola, vi la demo del taller y quiero consultar por una web para mi negocio." href="#">Consultar</a>
+  </nav></header>
+  <main>
+    <section class="hero" id="inicio"><div class="wrap hero-content">
+      <span class="eyebrow">Mecánica clara, trabajo cuidado</span>
+      <h1>Tu auto, en buenas manos.</h1>
+      <p>Diagnóstico y mantenimiento con explicaciones simples, para que sepas qué necesita tu vehículo antes de decidir.</p>
+      <a class="button" data-wa="Hola, vi la demo del taller. Quisiera consultar por un turno." href="#">Consultar por un turno ↗</a>
+    </div></section>
+    <section class="section" id="servicios"><div class="wrap">
+      <div class="section-heading"><span class="eyebrow">Servicios · precios de ejemplo</span><h2>Atención para cada kilómetro.</h2><p>Los precios son ilustrativos y se ajustan al modelo del vehículo y al diagnóstico.</p></div>
+      <div class="grid">
+        <article class="card"><img class="card-image" src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=900&q=80" alt="Mecánico trabajando en un vehículo"><div class="card-body"><span class="demo-label">Mantenimiento</span><h3>Service preventivo</h3><p>Revisión general, niveles y control de puntos esenciales.</p><div class="card-meta"><span>Desde</span><strong class="price" data-price-value="service">$45.000</strong></div></div></article>
+        <article class="card"><img class="card-image" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=900&q=80" alt="Herramientas y trabajo de mecánica"><div class="card-body"><span class="demo-label">Diagnóstico</span><h3>Revisión de frenos</h3><p>Inspección de componentes y recomendación de mantenimiento.</p><div class="card-meta"><span>Desde</span><strong class="price" data-price-value="brakes">$32.000</strong></div></div></article>
+        <article class="card"><img class="card-image" src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=900&q=80" alt="Vehículo en área de servicio"><div class="card-body"><span class="demo-label">Diagnóstico</span><h3>Escaneo electrónico</h3><p>Lectura inicial de fallas y orientación sobre próximos pasos.</p><div class="card-meta"><span>Desde</span><strong class="price" data-price-value="scan">$24.000</strong></div></article>
+      </div>
+      <div class="admin-actions" style="justify-content:center;margin-top:25px"><button class="button-outline" type="button" data-admin-toggle="price-admin" aria-expanded="false">Probar edición de precios</button></div>
+      <section class="admin-panel" id="price-admin" hidden><span class="demo-label">Solo demostración</span><h3>Actualizar precios</h3><p>Los cambios se ven únicamente en esta visita y no se guardan en un servidor.</p>
+        <form data-price-editor><div class="price-editor">
+          <div class="price-editor-row"><label for="price-service">Service preventivo</label><input id="price-service" data-price-input="service" type="number" min="0" value="45000"></div>
+          <div class="price-editor-row"><label for="price-brakes">Revisión de frenos</label><input id="price-brakes" data-price-input="brakes" type="number" min="0" value="32000"></div>
+          <div class="price-editor-row"><label for="price-scan">Escaneo electrónico</label><input id="price-scan" data-price-input="scan" type="number" min="0" value="24000"></div>
+        </div><div class="admin-actions"><button class="button-small" type="submit">Aplicar cambios a la demo</button></div><p class="status" data-price-status aria-live="polite"></p></form>
+      </section>
+    </div></section>
+    <section class="section section-soft" id="taller"><div class="wrap split" data-reveal>
+      <div><span class="demo-label">Un ejemplo de presentación</span><h2>Te explicamos antes de reparar.</h2><p>Estación Motor es un taller ficticio. El concepto muestra cómo contar el proceso de atención, presentar trabajos y ayudar a que cada persona sepa cómo pedir una consulta.</p>
+        <div class="info-grid"><div class="info-tile"><span>Horario de muestra</span><strong>Lun–Vie · 8:30 a 18 h</strong></div><div class="info-tile"><span>Atención</span><strong>Con turno previo</strong></div><div class="info-tile"><span>Zona ilustrativa</span><strong>Villa Crespo, CABA</strong></div></div>
+      </div><img src="https://images.unsplash.com/photo-1504222490345-c075b6008014?auto=format&fit=crop&w=1100&q=85" alt="Trabajo de mantenimiento automotor, imagen ilustrativa">
+    </div></section>
+    <section class="section" id="ubicacion"><div class="wrap"><div class="section-heading"><span class="eyebrow">Encontranos</span><h2>Un taller de barrio, cerca tuyo.</h2><p>La dirección y el mapa son datos de ejemplo, no corresponden a un negocio real.</p></div><div class="info-grid"><div class="info-tile"><span>Dirección ficticia</span><strong>Av. Corrientes 4200, CABA</strong></div><div class="info-tile"><span>Teléfono</span><strong>Consultas por WhatsApp</strong></div><div class="info-tile"><span>Cómo llegar</span><strong>Coordinamos al confirmar turno</strong></div></div></div></section>
+    <section class="cta-band"><div class="wrap"><span class="eyebrow">Tu negocio también puede tener una web así</span><h2>Mostremos lo que haces bien.</h2><p>Servicios, precios y contacto organizados para tus clientes.</p><a class="button" data-wa="Hola, vi la demo del taller y quiero conversar sobre una web para mi negocio." href="#">Consultar por mi proyecto ↗</a></div></section>
+  </main>
+  <footer class="demo-footer"><div class="wrap footer-row"><p>Estación Motor · Concepto ficticio</p><a class="back-link" href="../../index.html">← Volver a Crecimiento Web</a></div></footer>
+  <a class="whatsapp-float" data-wa="Hola, vi la demo del taller y quiero consultar por una web." href="#" aria-label="Consultar por WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.25 11.5a8.25 8.25 0 0 1-12.2 7.25L3.75 20l1.2-4.15A8.25 8.25 0 1 1 20.25 11.5Z"/><path d="M9 8.1c-.4-.4-1-.35-1.35.1-.55.7-.7 1.55-.42 2.4a9.25 9.25 0 0 0 6.15 6.15c.85.28 1.7.13 2.4-.42.45-.35.5-.95.1-1.35l-1.3-1.3a.95.95 0 0 0-1.2-.13l-.85.55a7.5 7.5 0 0 1-2.65-2.65l.55-.85a.95.95 0 0 0-.13-1.2L9 8.1Z"/></svg></a>
+  <script src="../shared/demo.js" defer></script>
+</body>
+</html>

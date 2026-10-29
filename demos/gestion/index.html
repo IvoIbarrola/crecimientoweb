@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demo de un sistema de gestión de pedidos e inventario para una pequeña empresa.">
+  <title>Panel Norte | Concepto de sistema de gestión</title>
+  <link rel="stylesheet" href="../shared/demo.css">
+  <style>
+    body[data-demo="management"] {
+      --paper: #f3f5f8;
+      --surface: #fff;
+      --ink: #172436;
+      --muted: #748195;
+      --line: #e2e7ee;
+      --accent: #2868c7;
+      --accent-strong: #1d519e;
+      --soft: #eaf0f8;
+      --navy: #172436;
+      --green: #238363;
+      --amber: #a56a13;
+    }
+
+    .app-shell { display: grid; min-height: calc(100vh - 38px); grid-template-columns: 220px minmax(0, 1fr); }
+    .sidebar { display: flex; flex-direction: column; padding: 25px 16px; background: var(--navy); color: #fff; }
+    .app-brand { display: flex; align-items: center; gap: 10px; padding: 0 9px 28px; color: #fff; font-size: 15px; font-weight: 800; letter-spacing: -.03em; text-decoration: none; }
+    .app-mark { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 10px; background: #79b4ed; color: #172436; font-weight: 900; }
+    .side-label { margin: 0 9px 10px; color: #96a4b8; font-size: 9px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+    .side-link { display: flex; align-items: center; gap: 11px; margin-bottom: 4px; padding: 10px 11px; border-radius: 9px; color: #c8d1de; font-size: 11px; font-weight: 650; text-decoration: none; }
+    .side-link.active, .side-link:hover { background: #29394e; color: #fff; }
+    .side-symbol { width: 19px; color: #9eb4cf; text-align: center; }
+    .sidebar-note { margin-top: auto; padding: 12px; border: 1px solid #3b4b60; border-radius: 11px; color: #c5d0dc; font-size: 10px; }
+    .sidebar-note strong { display: block; margin-bottom: 4px; color: #fff; }
+    .app-main { min-width: 0; }
+    .topbar { display: flex; min-height: 64px; align-items: center; justify-content: space-between; gap: 20px; padding: 0 30px; border-bottom: 1px solid var(--line); background: var(--surface); }
+    .breadcrumbs { color: var(--muted); font-size: 11px; }
+    .breadcrumbs strong { color: var(--ink); }
+    .topbar-actions { display: flex; align-items: center; gap: 14px; }
+    .demo-user { display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 10px; }
+    .avatar { display: grid; width: 28px; height: 28px; place-items: center; border-radius: 50%; background: var(--soft); color: var(--accent); font-weight: 800; }
+    .dashboard { width: min(1200px, 100%); margin: 0 auto; padding: 32px; }
+    .dashboard-heading { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 24px; }
+    .dashboard-heading .eyebrow { margin-bottom: 6px; color: var(--accent); }
+    .dashboard-heading h1 { margin: 0; font-size: clamp(26px, 4vw, 35px); letter-spacing: -.05em; }
+    .dashboard-heading p { margin: 5px 0 0; color: var(--muted); font-size: 11px; }
+    .metric-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 20px; }
+    .metric { padding: 18px; border: 1px solid var(--line); border-radius: 13px; background: var(--surface); }
+    .metric-label { display: block; margin-bottom: 8px; color: var(--muted); font-size: 10px; font-weight: 650; }
+    .metric strong { display: block; font-size: 24px; letter-spacing: -.04em; }
+    .metric small { color: var(--muted); font-size: 9px; }
+    .dashboard-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(250px, .8fr); gap: 16px; align-items: start; }
+    .dash-panel { min-width: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+    .panel-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 17px 19px; border-bottom: 1px solid var(--line); }
+    .panel-heading h2 { margin: 0; font-size: 13px; letter-spacing: -.02em; }
+    .panel-heading p { margin: 3px 0 0; color: var(--muted); font-size: 9px; }
+    .panel-body { padding: 17px 19px; }
+    .order-tools { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+    .order-filters { display: flex; flex-wrap: wrap; gap: 5px; }
+    .order-filter { padding: 6px 9px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); color: var(--muted); cursor: pointer; font-size: 9px; font-weight: 700; }
+    .order-filter[aria-pressed="true"] { border-color: var(--accent); background: var(--soft); color: var(--accent); }
+    .search-input { width: min(220px, 100%); min-height: 33px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); color: var(--ink); font-size: 10px; }
+    .table-scroll { overflow-x: auto; }
+    .data-table { width: 100%; border-collapse: collapse; text-align: left; }
+    .data-table th { padding: 9px 8px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 8px; letter-spacing: .07em; text-transform: uppercase; white-space: nowrap; }
+    .data-table td { padding: 11px 8px; border-bottom: 1px solid var(--line); font-size: 9px; white-space: nowrap; }
+    .data-table tr:last-child td { border-bottom: 0; }
+    .status-badge { display: inline-flex; padding: 4px 7px; border-radius: 999px; background: #fff3dc; color: #986312; font-size: 8px; font-weight: 800; }
+    .status-badge[data-status="Preparando"] { background: #e6effc; color: #2868c7; }
+    .status-badge[data-status="Listo"] { background: #e5f4ed; color: #207450; }
+    .row-status-select { display: block; max-width: 95px; margin-top: 5px; padding: 4px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--muted); font-size: 8px; }
+    .stock-list { display: grid; gap: 0; }
+    .stock-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .stock-row:last-child { border-bottom: 0; }
+    .stock-name { display: block; font-size: 10px; font-weight: 750; }
+    .stock-sku { color: var(--muted); font-size: 8px; }
+    .stock-count { text-align: right; }
+    .stock-count strong { display: block; font-size: 11px; }
+    .stock-count span { color: var(--green); font-size: 8px; }
+    .stock-count span[data-low="true"] { color: #b04a44; font-weight: 800; }
+    .stock-form { display: flex; grid-column: 1 / -1; align-items: center; gap: 5px; }
+    .stock-form input { width: 55px; min-height: 27px; padding: 4px 6px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); }
+    .stock-form button { min-height: 27px; padding: 0 8px; border: 0; border-radius: 6px; background: var(--soft); color: var(--accent); cursor: pointer; font-size: 8px; font-weight: 750; }
+    .stock-message { color: var(--muted); font-size: 8px; }
+    .order-form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .order-form .field label { font-size: 9px; }
+    .order-form .field input, .order-form .field select { min-height: 35px; padding: 7px; font-size: 10px; }
+    .order-form .field-full { grid-column: 1 / -1; }
+    .order-form .button-small { grid-column: 1 / -1; width: fit-content; }
+    .order-message { min-height: 16px; margin: 8px 0 0; color: var(--green); font-size: 9px; }
+    .system-note { margin: 18px 0 0; padding: 12px 15px; border: 1px dashed #a9bacd; border-radius: 10px; color: var(--muted); font-size: 9px; }
+    .management-footer { padding: 18px 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: 9px; }
+    .management-footer .wrap { display: flex; justify-content: space-between; gap: 12px; }
+    .management-footer p { margin: 0; }
+    .management-footer a { color: var(--accent); font-weight: 700; text-decoration: none; }
+    @media (max-width: 1000px) {
+      .app-shell { grid-template-columns: 65px minmax(0, 1fr); }
+      .sidebar { align-items: center; padding-inline: 8px; }
+      .app-brand { padding-inline: 0; }
+      .app-brand span:last-child, .side-label, .side-link span:last-child, .sidebar-note { display: none; }
+      .side-link { width: 42px; justify-content: center; padding-inline: 0; }
+      .side-symbol { width: auto; }
+      .metric-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 700px) {
+      .app-shell { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      .topbar { padding-inline: 17px; }
+      .dashboard { padding: 22px 16px; }
+      .dashboard-heading { align-items: flex-start; flex-direction: column; }
+      .dashboard-grid { grid-template-columns: 1fr; }
+      .management-footer { padding-inline: 16px; }
+      .management-footer .wrap { flex-direction: column; }
+      .demo-user span:last-child { display: none; }
+    }
+  </style>
+</head>
+<body data-demo="management">
+  <div class="demo-notice">Concepto ficticio · Datos de ejemplo · No requiere ni incluye inicio de sesión</div>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Menú del sistema">
+      <a class="app-brand" href="#resumen"><span class="app-mark">N</span><span>Norte Gestión</span></a>
+      <span class="side-label">Espacio de trabajo</span>
+      <a class="side-link active" href="#resumen"><span class="side-symbol" aria-hidden="true">▦</span><span>Resumen</span></a>
+      <a class="side-link" href="#pedidos"><span class="side-symbol" aria-hidden="true">▤</span><span>Pedidos</span></a>
+      <a class="side-link" href="#inventario"><span class="side-symbol" aria-hidden="true">◫</span><span>Inventario</span></a>
+      <div class="sidebar-note"><strong>Panel de muestra</strong>Las acciones son temporales y visibles solo en esta visita.</div>
+    </aside>
+    <div class="app-main">
+      <header class="topbar">
+        <div class="breadcrumbs">Norte Gestión <span aria-hidden="true">/</span> <strong>Resumen</strong></div>
+        <div class="topbar-actions">
+          <a class="back-link" href="../../index.html">Volver a la web</a>
+          <div class="demo-user"><span class="avatar" aria-hidden="true">DG</span><span>Demo de gestión</span></div>
+        </div>
+      </header>
+      <main class="dashboard" id="resumen">
+        <div class="dashboard-heading">
+          <div><span class="eyebrow">Miércoles · vista general</span><h1>Hola, equipo.</h1><p>Un vistazo rápido a la actividad de este negocio de ejemplo.</p></div>
+          <a class="button-small" data-wa="Hola, vi la demo del sistema de gestión y quiero consultar por una solución para mi negocio." href="#">Consultar por un sistema ↗</a>
+        </div>
+        <section class="metric-grid" aria-label="Indicadores ilustrativos">
+          <article class="metric"><span class="metric-label">Pedidos del día</span><strong data-order-count>4</strong><small>En esta demostración</small></article>
+          <article class="metric"><span class="metric-label">Pendientes</span><strong data-pending-count>2</strong><small>Revisar preparación</small></article>
+          <article class="metric"><span class="metric-label">Productos activos</span><strong>28</strong><small>Catálogo de muestra</small></article>
+          <article class="metric"><span class="metric-label">Stock bajo</span><strong>2</strong><small>Conviene revisar</small></article>
+        </section>
+        <div class="dashboard-grid">
+          <section class="dash-panel" id="pedidos">
+            <div class="panel-heading"><div><h2>Pedidos recientes</h2><p>Busca, filtra y cambia el estado de muestra.</p></div><a class="back-link" href="#nuevo-pedido">+ Agregar pedido</a></div>
+            <div class="panel-body">
+              <div class="order-tools">
+                <div class="order-filters" role="group" aria-label="Filtrar por estado">
+                  <button class="order-filter" type="button" data-order-filter="todos" aria-pressed="true">Todos</button>
+                  <button class="order-filter" type="button" data-order-filter="Pendiente" aria-pressed="false">Pendientes</button>
+                  <button class="order-filter" type="button" data-order-filter="Preparando" aria-pressed="false">Preparando</button>
+                  <button class="order-filter" type="button" data-order-filter="Listo" aria-pressed="false">Listos</button>
+                </div>
+                <label><span class="side-label" style="position:absolute;clip:rect(0,0,0,0)">Buscar pedidos</span><input class="search-input" data-order-search type="search" placeholder="Buscar cliente o producto"></label>
+              </div>
+              <div class="table-scroll">
+                <table class="data-table">
+                  <thead><tr><th>Pedido</th><th>Cliente</th><th>Detalle</th><th>Total</th><th>Estado</th></tr></thead>
+                  <tbody data-order-list>
+                    <tr data-order-row data-status="Pendiente"><td>#024</td><td>Lucía Fernández</td><td>Pack desayuno</td><td>$18.500</td><td><span class="status-badge" data-status-badge data-status="Pendiente">Pendiente</span><select class="row-status-select" data-order-status aria-label="Estado del pedido #024"><option>Pendiente</option><option>Preparando</option><option>Listo</option></select></td></tr>
+                    <tr data-order-row data-status="Preparando"><td>#023</td><td>Mateo Ríos</td><td>Café molido × 2</td><td>$14.000</td><td><span class="status-badge" data-status-badge data-status="Preparando">Preparando</span><select class="row-status-select" data-order-status aria-label="Estado del pedido #023"><option>Pendiente</option><option selected>Preparando</option><option>Listo</option></select></td></tr>
+                    <tr data-order-row data-status="Listo"><td>#022</td><td>Valentina Paz</td><td>Combo merienda</td><td>$21.200</td><td><span class="status-badge" data-status-badge data-status="Listo">Listo</span><select class="row-status-select" data-order-status aria-label="Estado del pedido #022"><option>Pendiente</option><option>Preparando</option><option selected>Listo</option></select></td></tr>
+                    <tr data-order-row data-status="Pendiente"><td>#021</td><td>Tomás Vega</td><td>Pan de masa madre</td><td>$9.600</td><td><span class="status-badge" data-status-badge data-status="Pendiente">Pendiente</span><select class="row-status-select" data-order-status aria-label="Estado del pedido #021"><option>Pendiente</option><option>Preparando</option><option>Listo</option></select></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+          <section class="dash-panel" id="inventario">
+            <div class="panel-heading"><div><h2>Inventario</h2><p>Prueba el ajuste local de existencias.</p></div><span class="demo-label">Muestra</span></div>
+            <div class="panel-body"><div class="stock-list">
+              <article class="stock-row" data-stock-row><div><span class="stock-name">Café de origen · 500 g</span><span class="stock-sku">CAF-500 · proveedor local</span></div><div class="stock-count"><strong data-stock-value>3</strong><span data-stock-state data-low="true">Reponer</span></div><form class="stock-form" data-stock-form><label class="side-label" for="stock-coffee" style="margin:0">Unidades</label><input id="stock-coffee" data-stock-input type="number" min="0" value="3"><button type="submit">Actualizar</button><span class="stock-message" data-stock-message aria-live="polite"></span></form></article>
+              <article class="stock-row" data-stock-row><div><span class="stock-name">Granola artesanal · 300 g</span><span class="stock-sku">GRA-300 · producción propia</span></div><div class="stock-count"><strong data-stock-value>12</strong><span data-stock-state data-low="false">Disponible</span></div><form class="stock-form" data-stock-form><label class="side-label" for="stock-granola" style="margin:0">Unidades</label><input id="stock-granola" data-stock-input type="number" min="0" value="12"><button type="submit">Actualizar</button><span class="stock-message" data-stock-message aria-live="polite"></span></form></article>
+              <article class="stock-row" data-stock-row><div><span class="stock-name">Té en hebras · 100 g</span><span class="stock-sku">TE-100 · proveedor local</span></div><div class="stock-count"><strong data-stock-value>2</strong><span data-stock-state data-low="true">Reponer</span></div><form class="stock-form" data-stock-form><label class="side-label" for="stock-tea" style="margin:0">Unidades</label><input id="stock-tea" data-stock-input type="number" min="0" value="2"><button type="submit">Actualizar</button><span class="stock-message" data-stock-message aria-live="polite"></span></form></article>
+            </div></div>
+          </section>
+          <section class="dash-panel" id="nuevo-pedido">
+            <div class="panel-heading"><div><h2>Registrar pedido</h2><p>Se agrega únicamente a esta vista.</p></div><span class="demo-label">Sin backend</span></div>
+            <div class="panel-body">
+              <form class="order-form" data-order-form>
+                <div class="field"><label for="order-customer">Cliente</label><input id="order-customer" name="customer" required maxlength="60" placeholder="Nombre"></div>
+                <div class="field"><label for="order-item">Producto o pedido</label><input id="order-item" name="item" required maxlength="80" placeholder="Ej. Caja desayuno"></div>
+                <div class="field"><label for="order-amount">Total ilustrativo (ARS)</label><input id="order-amount" name="amount" type="number" min="1" required placeholder="15000"></div>
+                <button class="button-small" type="submit">Agregar pedido de muestra</button>
+              </form>
+              <p class="order-message" data-order-message aria-live="polite"></p>
+            </div>
+          </section>
+          <section class="dash-panel">
+            <div class="panel-heading"><div><h2>¿Tu operación es distinta?</h2><p>Este concepto puede adaptarse a otros rubros.</p></div></div>
+            <div class="panel-body"><p style="margin:0 0 13px;color:var(--muted);font-size:10px">Pedidos, clientes, turnos, tareas o productos: definimos las funciones según el flujo real del negocio.</p><a class="button-small" data-wa="Hola, vi la demo del sistema de gestión. Quiero contarte qué procesos me gustaría ordenar en mi negocio." href="#">Contar mi necesidad ↗</a></div>
+          </section>
+        </div>
+        <p class="system-note"><strong>Importante:</strong> este panel es una simulación con datos ficticios. Los cambios no se guardan, no se comparten y no sustituyen un sistema conectado a una base de datos.</p>
+      </main>
+      <footer class="management-footer"><div class="wrap"><p>Norte Gestión · Concepto ficticio para Crecimiento Web</p><a href="../../index.html">← Volver a Crecimiento Web</a></div></footer>
+    </div>
+  </div>
+  <a class="whatsapp-float" data-wa="Hola, vi la demo del sistema de gestión y quiero consultar por una solución para mi negocio." href="#" aria-label="Consultar por WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.25 11.5a8.25 8.25 0 0 1-12.2 7.25L3.75 20l1.2-4.15A8.25 8.25 0 1 1 20.25 11.5Z"/><path d="M9 8.1c-.4-.4-1-.35-1.35.1-.55.7-.7 1.55-.42 2.4a9.25 9.25 0 0 0 6.15 6.15c.85.28 1.7.13 2.4-.42.45-.35.5-.95.1-1.35l-1.3-1.3a.95.95 0 0 0-1.2-.13l-.85.55a7.5 7.5 0 0 1-2.65-2.65l.55-.85a.95.95 0 0 0-.13-1.2L9 8.1Z"/></svg></a>
+  <script src="../shared/demo.js" defer></script>
+</body>
+</html>
