@@ -1,0 +1,1496 @@
+body[data-demo="salon"] {
+  --paper: #f3ece7;
+  --surface: #fffaf6;
+  --ink: #30232c;
+  --muted: #71636b;
+  --line: #dfd1d1;
+  --accent: #914461;
+  --accent-strong: #71314b;
+  --soft: #e9d9dc;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", sans-serif;
+}
+
+body[data-demo="salon"] .demo-notice {
+  background: #30232c;
+  color: #f3ece7;
+  letter-spacing: .08em;
+}
+
+body[data-demo="salon"] .demo-header {
+  border-bottom: 0;
+  background: rgb(243 236 231 / 92%);
+}
+
+body[data-demo="salon"] .brand {
+  font-family: var(--serif);
+  font-size: 25px;
+  font-style: italic;
+}
+
+body[data-demo="salon"] .hero {
+  display: block;
+  min-height: 0;
+  overflow: visible;
+  padding: clamp(40px, 7vw, 92px) 0 clamp(74px, 10vw, 132px);
+  background: none;
+  color: var(--ink);
+}
+
+.salon-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(34px, 8vw, 118px);
+}
+
+body[data-demo="salon"] .hero-content {
+  max-width: 570px;
+}
+
+body[data-demo="salon"] .hero .eyebrow {
+  color: var(--accent);
+}
+
+body[data-demo="salon"] .hero h1 {
+  margin: 0 0 23px;
+  font-family: var(--serif);
+  font-size: clamp(58px, 7.3vw, 104px);
+  font-weight: 500;
+  letter-spacing: -.075em;
+  line-height: .96;
+}
+
+body[data-demo="salon"] .hero h1 em {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+body[data-demo="salon"] .hero p {
+  max-width: 400px;
+  color: var(--muted);
+}
+
+.salon-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+}
+
+.salon-secondary-link {
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 750;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
+.salon-portrait {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+}
+
+.salon-portrait img {
+  width: 100%;
+  height: clamp(390px, 48vw, 620px);
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+.salon-portrait figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 32px;
+  width: min(250px, 58%);
+  padding: 21px 23px;
+  background: #fffaf6;
+  box-shadow: 0 15px 44px rgb(48 35 44 / 13%);
+  font-family: var(--serif);
+  font-size: 19px;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.salon-portrait figcaption span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.salon-side-note {
+  position: absolute;
+  top: 50%;
+  left: -44px;
+  color: var(--muted);
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  transform: translate(-100%, -50%) rotate(-90deg);
+  transform-origin: right center;
+}
+
+body[data-demo="salon"] #filosofia .split {
+  grid-template-columns: 1fr .9fr;
+}
+
+body[data-demo="salon"] #filosofia .split img {
+  border-radius: 48% 48% 0 0;
+}
+
+body[data-demo="salon"] #servicios {
+  background: #30232c;
+  color: #fffaf6;
+}
+
+body[data-demo="salon"] #servicios .section-heading {
+  max-width: 780px;
+  text-align: left;
+}
+
+body[data-demo="salon"] #servicios .section-heading .eyebrow,
+body[data-demo="salon"] #servicios .price {
+  color: #e9a9bb;
+}
+
+body[data-demo="salon"] #servicios .section-heading p {
+  color: #d3c3cc;
+}
+
+body[data-demo="salon"] #servicios .grid {
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid #55434f;
+}
+
+body[data-demo="salon"] #servicios .card {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  padding: 17px 0;
+  border: 0;
+  border-bottom: 1px solid #55434f;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body[data-demo="salon"] #servicios .card-image {
+  width: 92px;
+  height: 112px;
+  border-radius: 46px 46px 4px 4px;
+}
+
+body[data-demo="salon"] #servicios .card-body {
+  display: grid;
+  grid-template-columns: minmax(0, .7fr) minmax(200px, 1fr) auto;
+  align-items: center;
+  gap: 4px 28px;
+  padding: 0;
+}
+
+body[data-demo="salon"] #servicios .demo-label {
+  grid-column: 1 / -1;
+  width: fit-content;
+  background: #493743;
+  color: #e9a9bb;
+}
+
+body[data-demo="salon"] #servicios .card-body h3 {
+  margin: 0;
+  font-size: 23px;
+}
+
+body[data-demo="salon"] #servicios .card-body p {
+  margin: 0;
+  color: #d3c3cc;
+}
+
+body[data-demo="salon"] #servicios .card-meta {
+  grid-column: 3;
+  grid-row: 2 / span 2;
+  min-width: 150px;
+  justify-content: flex-end;
+  gap: 5px;
+  color: #d3c3cc;
+}
+
+body[data-demo="salon"] #servicios .admin-panel {
+  color: var(--ink);
+}
+
+body[data-demo="salon"] .cta-band {
+  background: #e3c9ce;
+  color: #30232c;
+}
+
+body[data-demo="salon"] .cta-band p {
+  color: #594852;
+}
+
+body[data-demo="restaurant"] {
+  --paper: #f2e9da;
+  --surface: #fbf5eb;
+  --ink: #28251f;
+  --muted: #756d60;
+  --line: #d9cdb9;
+  --accent: #b94a32;
+  --accent-strong: #923a28;
+  --soft: #e8ddca;
+  --serif: "DM Serif Display", Georgia, serif;
+  --sans: "Manrope", sans-serif;
+}
+
+body[data-demo="restaurant"] .demo-notice {
+  background: #28251f;
+  color: #f2e9da;
+  letter-spacing: .07em;
+}
+
+body[data-demo="restaurant"] .brand {
+  font-size: 24px;
+}
+
+body[data-demo="restaurant"] .hero {
+  min-height: min(690px, calc(100svh - 110px));
+  text-align: left;
+  background:
+    linear-gradient(90deg, rgb(24 20 17 / 82%) 0%, rgb(24 20 17 / 46%) 55%, rgb(24 20 17 / 22%) 100%),
+    var(--hero-image);
+  background-position: center 54%;
+}
+
+.restaurant-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 235px;
+  align-items: end;
+  gap: clamp(24px, 8vw, 108px);
+}
+
+body[data-demo="restaurant"] .hero-content {
+  max-width: 740px;
+  margin: 0;
+}
+
+body[data-demo="restaurant"] .hero h1 {
+  max-width: 700px;
+  font-size: clamp(58px, 8.5vw, 112px);
+  line-height: .94;
+}
+
+.restaurant-reserve-card {
+  padding: 22px;
+  border: 1px solid rgb(255 255 255 / 55%);
+  background: rgb(242 233 218 / 94%);
+  color: #28251f;
+}
+
+.restaurant-reserve-card span,
+.restaurant-reserve-card small {
+  display: block;
+  color: #756d60;
+  font-size: 10px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.restaurant-reserve-card strong {
+  display: block;
+  margin: 12px 0;
+  font-family: var(--serif);
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.restaurant-reserve-card a {
+  display: block;
+  margin-top: 17px;
+  color: var(--accent-strong);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+body[data-demo="restaurant"] #historia {
+  background: #28251f;
+  color: #f2e9da;
+}
+
+body[data-demo="restaurant"] #historia p {
+  color: #d4c9b8;
+}
+
+body[data-demo="restaurant"] #historia .demo-label {
+  background: #3b352b;
+  color: #e9a077;
+}
+
+body[data-demo="restaurant"] #historia .info-tile {
+  border-color: #51493c;
+  background: #332f27;
+}
+
+body[data-demo="restaurant"] #historia .info-tile span {
+  color: #d4c9b8;
+}
+
+body[data-demo="restaurant"] #menu .section-heading {
+  max-width: 820px;
+  text-align: left;
+}
+
+body[data-demo="restaurant"] #menu .grid {
+  display: block;
+  max-width: 920px;
+  margin-inline: auto;
+}
+
+body[data-demo="restaurant"] .menu-heading {
+  margin: 35px 0 0;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--ink);
+  font-size: 28px;
+}
+
+body[data-demo="restaurant"] .menu-card {
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+  align-items: center;
+  gap: 22px;
+  padding: 15px 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body[data-demo="restaurant"] .menu-card .card-image {
+  width: 118px;
+  height: 100px;
+  border-radius: 2px;
+}
+
+body[data-demo="restaurant"] .menu-card .card-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 3px 14px;
+  padding: 0;
+}
+
+body[data-demo="restaurant"] .menu-card .demo-label {
+  grid-column: 1 / -1;
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--accent-strong);
+}
+
+body[data-demo="restaurant"] .menu-card h3 {
+  margin: 0;
+  font-size: 23px;
+}
+
+body[data-demo="restaurant"] .menu-card p {
+  grid-column: 1;
+  margin: 0;
+}
+
+body[data-demo="restaurant"] .menu-card .card-meta {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+body[data-demo="restaurant"] #resenas .review {
+  border-top: 3px solid var(--accent);
+  border-radius: 0;
+  background: transparent;
+}
+
+body[data-demo="restaurant"] .cta-band {
+  background: #c4a372;
+  color: #28251f;
+}
+
+body[data-demo="restaurant"] .cta-band p {
+  color: #3e372d;
+}
+
+body[data-demo="garage"] {
+  --paper: #10191e;
+  --surface: #17252b;
+  --ink: #eff3ec;
+  --muted: #a3b1b2;
+  --line: #34444a;
+  --accent: #ff9a50;
+  --accent-strong: #ffb078;
+  --soft: #223239;
+  --serif: "Barlow Condensed", Impact, sans-serif;
+  --sans: "DM Sans", sans-serif;
+}
+
+body[data-demo="garage"] .demo-notice {
+  background: #ff9a50;
+  color: #10191e;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  letter-spacing: .045em;
+}
+
+body[data-demo="garage"] .brand {
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: .06em;
+}
+
+body[data-demo="garage"] .hero {
+  display: block;
+  min-height: 0;
+  padding: clamp(52px, 8vw, 108px) 0;
+  background: #10191e;
+}
+
+.garage-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(32px, 7vw, 94px);
+}
+
+body[data-demo="garage"] .hero-content {
+  max-width: 650px;
+}
+
+body[data-demo="garage"] .hero .eyebrow,
+body[data-demo="garage"] .demo-label {
+  color: #ffad70;
+}
+
+body[data-demo="garage"] .hero h1 {
+  max-width: 620px;
+  font-family: "Barlow Condensed", Impact, sans-serif;
+  font-size: clamp(66px, 8.8vw, 108px);
+  font-weight: 800;
+  letter-spacing: -.055em;
+  line-height: .82;
+  text-transform: uppercase;
+}
+
+body[data-demo="garage"] .hero h1 em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+body[data-demo="garage"] .hero p {
+  color: #bcc7c5;
+}
+
+.garage-visual {
+  position: relative;
+  min-height: 450px;
+  overflow: hidden;
+  background: #34444a;
+}
+
+.garage-visual img {
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+  object-fit: cover;
+  opacity: .8;
+  mix-blend-mode: luminosity;
+}
+
+.garage-visual::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgb(16 25 30 / 92%));
+  content: "";
+}
+
+.garage-visual-label {
+  position: absolute;
+  z-index: 1;
+  top: 18px;
+  left: 18px;
+  padding: 8px 10px;
+  background: #ff9a50;
+  color: #10191e;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
+
+.garage-checklist {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px;
+  border-top: 1px solid rgb(255 255 255 / 35%);
+  color: #fff;
+}
+
+.garage-checklist span {
+  display: block;
+  color: #ffad70;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+}
+
+.garage-checklist strong {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+body[data-demo="garage"] #servicios .section-heading {
+  max-width: 760px;
+  text-align: left;
+}
+
+body[data-demo="garage"] #servicios .grid {
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+body[data-demo="garage"] #servicios .card {
+  display: grid;
+  grid-template-columns: 175px minmax(0, 1fr);
+  align-items: stretch;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body[data-demo="garage"] #servicios .card-image {
+  min-height: 170px;
+  height: 100%;
+  filter: saturate(.55);
+}
+
+body[data-demo="garage"] #servicios .card-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-content: center;
+  align-items: baseline;
+  gap: 5px 24px;
+  padding: 24px clamp(20px, 4vw, 42px);
+}
+
+body[data-demo="garage"] #servicios .card-body .demo-label,
+body[data-demo="garage"] #servicios .card-body p {
+  grid-column: 1;
+}
+
+body[data-demo="garage"] #servicios .card-body h3 {
+  grid-column: 1;
+  margin: 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+body[data-demo="garage"] #servicios .card-body p {
+  margin: 0;
+}
+
+body[data-demo="garage"] #servicios .card-meta {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+  color: var(--muted);
+}
+
+body[data-demo="garage"] #servicios .price {
+  color: var(--accent);
+}
+
+body[data-demo="garage"] #taller .split img {
+  border-radius: 0;
+  filter: saturate(.6);
+}
+
+body[data-demo="garage"] #ubicacion {
+  background: #17252b;
+}
+
+body[data-demo="garage"] #ubicacion .info-tile {
+  border-radius: 0;
+}
+
+body[data-demo="garage"] .cta-band {
+  background: #ff9a50;
+  color: #10191e;
+}
+
+body[data-demo="garage"] .cta-band p {
+  color: #303633;
+}
+
+body[data-demo="fitness"] {
+  --paper: #121511;
+  --surface: #1c211a;
+  --ink: #f1f0e5;
+  --muted: #bbc0b1;
+  --line: #3a4034;
+  --accent: #d5f454;
+  --accent-strong: #e1ff68;
+  --soft: #262c20;
+  --serif: "Archivo Black", Impact, sans-serif;
+  --sans: "DM Sans", sans-serif;
+}
+
+body[data-demo="fitness"] .demo-notice {
+  background: #d5f454;
+  color: #121511;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+body[data-demo="fitness"] .brand {
+  font-family: "Archivo Black", Impact, sans-serif;
+  font-size: 18px;
+  letter-spacing: -.05em;
+}
+
+body[data-demo="fitness"] .hero {
+  min-height: min(700px, calc(100svh - 110px));
+  background:
+    linear-gradient(90deg, rgb(18 21 17 / 92%) 2%, rgb(18 21 17 / 63%) 48%, rgb(18 21 17 / 12%) 100%),
+    var(--hero-image);
+  background-position: center 56%;
+}
+
+body[data-demo="fitness"] .hero-content {
+  max-width: 760px;
+  margin: 0;
+  text-align: left;
+}
+
+body[data-demo="fitness"] .hero h1 {
+  max-width: 760px;
+  font-family: "Archivo Black", Impact, sans-serif;
+  font-size: clamp(72px, 12vw, 150px);
+  font-weight: 400;
+  letter-spacing: -.085em;
+  line-height: .84;
+  text-transform: uppercase;
+}
+
+body[data-demo="fitness"] .hero h1 em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+body[data-demo="fitness"] .hero p {
+  max-width: 450px;
+  color: #d2d6c9;
+}
+
+body[data-demo="fitness"] .hero .button {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #121511;
+}
+
+.gym-scoreline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--accent);
+  color: #121511;
+}
+
+.gym-scoreline div {
+  padding: 25px clamp(18px, 4vw, 56px);
+  border-right: 1px solid rgb(18 21 17 / 25%);
+}
+
+.gym-scoreline div:last-child {
+  border: 0;
+}
+
+.gym-scoreline strong {
+  display: block;
+  font-family: "Archivo Black", Impact, sans-serif;
+  font-size: clamp(24px, 4vw, 42px);
+  line-height: 1;
+}
+
+.gym-scoreline span {
+  display: block;
+  margin-top: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+body[data-demo="fitness"] #planes .section-heading {
+  max-width: 760px;
+  text-align: left;
+}
+
+body[data-demo="fitness"] #planes .grid {
+  grid-template-columns: 1.1fr .95fr .95fr;
+  align-items: stretch;
+}
+
+body[data-demo="fitness"] #planes .card {
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--surface);
+}
+
+body[data-demo="fitness"] #planes .card:first-child {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #121511;
+}
+
+body[data-demo="fitness"] #planes .card:first-child .card-image {
+  height: 230px;
+}
+
+body[data-demo="fitness"] #planes .card:first-child .demo-label {
+  background: rgb(18 21 17 / 12%);
+  color: #121511;
+}
+
+body[data-demo="fitness"] #planes .card:first-child .price {
+  color: #121511;
+}
+
+body[data-demo="fitness"] #planes .card-image {
+  height: 178px;
+}
+
+body[data-demo="fitness"] #planes .card-body h3,
+body[data-demo="fitness"] #test h2,
+body[data-demo="fitness"] .quiz-result h3 {
+  font-family: "Archivo Black", Impact, sans-serif;
+  letter-spacing: -.055em;
+}
+
+body[data-demo="fitness"] #test {
+  background: #d5f454;
+  color: #121511;
+}
+
+body[data-demo="fitness"] #test .section-heading .eyebrow,
+body[data-demo="fitness"] #test .section-heading p {
+  color: #333a27;
+}
+
+body[data-demo="fitness"] #test .quiz {
+  border-color: #a8c240;
+  border-radius: 4px;
+  background: #f4f8e6;
+}
+
+body[data-demo="fitness"] #test .field label {
+  color: #333a27;
+}
+
+body[data-demo="fitness"] .cta-band {
+  background: #d5f454;
+  color: #121511;
+}
+
+body[data-demo="fitness"] .cta-band p {
+  color: #333a27;
+}
+
+body[data-demo="fashion"] {
+  --paper: #f6f2ec;
+  --surface: #fffdf9;
+  --ink: #26231f;
+  --muted: #766f67;
+  --line: #ded8ce;
+  --accent: #8d5b44;
+  --accent-strong: #69402f;
+  --soft: #e8e0d5;
+  --serif: "Bodoni Moda", Didot, Georgia, serif;
+  --sans: "Manrope", sans-serif;
+}
+
+body[data-demo="fashion"] .demo-notice {
+  background: #26231f;
+  color: #f6f2ec;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+body[data-demo="fashion"] .brand {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+body[data-demo="fashion"] .hero {
+  display: block;
+  min-height: 0;
+  padding: 42px 0 70px;
+  background: none;
+  color: var(--ink);
+}
+
+.fashion-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(30px, 7vw, 96px);
+}
+
+body[data-demo="fashion"] .hero-content {
+  max-width: 550px;
+}
+
+body[data-demo="fashion"] .hero .eyebrow {
+  color: var(--accent);
+}
+
+body[data-demo="fashion"] .hero h1 {
+  margin: 0 0 19px;
+  font-family: "Bodoni Moda", Didot, Georgia, serif;
+  font-size: clamp(62px, 8vw, 110px);
+  font-weight: 500;
+  letter-spacing: -.085em;
+  line-height: .88;
+}
+
+body[data-demo="fashion"] .hero h1 em {
+  color: var(--accent);
+  font-weight: 400;
+}
+
+body[data-demo="fashion"] .hero p {
+  max-width: 370px;
+  color: var(--muted);
+}
+
+.fashion-campaign {
+  position: relative;
+  min-height: clamp(390px, 45vw, 590px);
+  margin: 0;
+  background: #ded8ce;
+}
+
+.fashion-campaign img {
+  width: 100%;
+  height: clamp(390px, 45vw, 590px);
+  object-fit: cover;
+  object-position: center 36%;
+}
+
+.fashion-campaign figcaption {
+  position: absolute;
+  right: -15px;
+  bottom: 26px;
+  padding: 13px 18px;
+  background: #f6f2ec;
+  color: var(--ink);
+  font-family: "Bodoni Moda", Didot, Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+}
+
+body[data-demo="fashion"] #coleccion .section-heading {
+  max-width: none;
+  margin: 0 0 22px;
+  text-align: left;
+}
+
+body[data-demo="fashion"] #coleccion .section-heading h2 {
+  font-size: clamp(43px, 6vw, 74px);
+}
+
+body[data-demo="fashion"] .filter-bar {
+  justify-content: flex-start;
+  border-bottom: 1px solid var(--line);
+}
+
+body[data-demo="fashion"] .filter-button {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+body[data-demo="fashion"] .filter-button[aria-pressed="true"] {
+  border-bottom: 2px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+}
+
+body[data-demo="fashion"] #coleccion .grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 38px 16px;
+}
+
+body[data-demo="fashion"] #coleccion .product-card {
+  grid-column: span 3;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body[data-demo="fashion"] #coleccion .product-card:nth-child(4n + 2),
+body[data-demo="fashion"] #coleccion .product-card:nth-child(4n + 4) {
+  transform: translateY(36px);
+}
+
+body[data-demo="fashion"] #coleccion .product-card:hover {
+  transform: translateY(28px);
+}
+
+body[data-demo="fashion"] #coleccion .product-card:nth-child(4n + 1):hover,
+body[data-demo="fashion"] #coleccion .product-card:nth-child(4n + 3):hover {
+  transform: translateY(-8px);
+}
+
+body[data-demo="fashion"] #coleccion .card-image {
+  height: clamp(260px, 32vw, 420px);
+  background: #e8e0d5;
+}
+
+body[data-demo="fashion"] #coleccion .card-body {
+  padding: 14px 0;
+}
+
+body[data-demo="fashion"] #coleccion .card-body h3 {
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  letter-spacing: -.02em;
+}
+
+body[data-demo="fashion"] #coleccion .product-options {
+  gap: 8px;
+}
+
+body[data-demo="fashion"] #coleccion .choice-button {
+  border-radius: 0;
+  background: transparent;
+}
+
+body[data-demo="fashion"] #coleccion .cart-summary {
+  border-radius: 0;
+}
+
+body[data-demo="fashion"] #marca .split img {
+  border-radius: 0;
+}
+
+body[data-demo="fashion"] .cta-band {
+  background: #ded8ce;
+  color: var(--ink);
+}
+
+body[data-demo="fashion"] .cta-band p {
+  color: #554f49;
+}
+
+body[data-demo="management"] {
+  --paper: #f3f1e8;
+  --surface: #fffef9;
+  --ink: #202820;
+  --muted: #657067;
+  --line: #d8ded3;
+  --accent: #1c6b55;
+  --accent-strong: #124d3d;
+  --soft: #e4ece2;
+  --navy: #172a26;
+  --green: #1c6b55;
+  --amber: #a95f20;
+  --sans: "DM Sans", sans-serif;
+}
+
+body[data-demo="management"] .demo-notice {
+  background: #d9e8d2;
+  color: #1f3a2f;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+body[data-demo="management"] .app-shell {
+  grid-template-columns: 248px minmax(0, 1fr);
+  background: var(--paper);
+}
+
+body[data-demo="management"] .sidebar {
+  position: sticky;
+  top: 0;
+  height: calc(100vh - 38px);
+  padding: 28px 18px;
+  background: #172a26;
+}
+
+body[data-demo="management"] .app-mark {
+  border-radius: 4px;
+  background: #d5f454;
+  color: #172a26;
+}
+
+body[data-demo="management"] .side-link {
+  min-height: 42px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+body[data-demo="management"] .side-link.active {
+  background: #2a473d;
+  box-shadow: inset 3px 0 #d5f454;
+}
+
+body[data-demo="management"] .side-symbol {
+  font-size: 14px;
+}
+
+body[data-demo="management"] .sidebar-note {
+  border-radius: 5px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+body[data-demo="management"] .topbar {
+  position: relative;
+  min-height: 72px;
+  padding-inline: clamp(18px, 3vw, 38px);
+  background: #fffef9;
+}
+
+body[data-demo="management"] .breadcrumbs,
+body[data-demo="management"] .demo-user {
+  font-size: 12px;
+}
+
+body[data-demo="management"] .dashboard {
+  width: min(1360px, 100%);
+  padding: clamp(22px, 3.2vw, 44px);
+}
+
+body[data-demo="management"] .dashboard-heading h1 {
+  font-size: clamp(32px, 4vw, 46px);
+  letter-spacing: -.065em;
+}
+
+body[data-demo="management"] .dashboard-heading p {
+  font-size: 13px;
+}
+
+body[data-demo="management"] .metric-grid {
+  gap: 14px;
+}
+
+body[data-demo="management"] .metric {
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  border-radius: 5px;
+  box-shadow: 0 9px 24px rgb(32 40 32 / 4%);
+}
+
+body[data-demo="management"] .metric::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 42px;
+  height: 4px;
+  background: var(--accent);
+  content: "";
+}
+
+body[data-demo="management"] .metric-label {
+  font-size: 11px;
+}
+
+body[data-demo="management"] .metric strong {
+  font-size: clamp(27px, 3vw, 36px);
+}
+
+body[data-demo="management"] .metric small {
+  font-size: 10px;
+}
+
+body[data-demo="management"] .dashboard-grid {
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, .8fr);
+  gap: 18px;
+}
+
+body[data-demo="management"] .dash-panel {
+  border-radius: 5px;
+  box-shadow: 0 9px 24px rgb(32 40 32 / 4%);
+}
+
+body[data-demo="management"] .panel-heading h2 {
+  font-size: 15px;
+}
+
+body[data-demo="management"] .panel-heading p {
+  font-size: 11px;
+}
+
+body[data-demo="management"] .panel-body {
+  padding: 19px;
+}
+
+body[data-demo="management"] .order-filter,
+body[data-demo="management"] .search-input {
+  min-height: 38px;
+  font-size: 11px;
+}
+
+body[data-demo="management"] .data-table th {
+  font-size: 10px;
+}
+
+body[data-demo="management"] .data-table td {
+  padding-block: 13px;
+  font-size: 11px;
+}
+
+body[data-demo="management"] .status-badge {
+  font-size: 10px;
+}
+
+body[data-demo="management"] .row-status-select {
+  min-height: 30px;
+  font-size: 10px;
+}
+
+body[data-demo="management"] .stock-name {
+  font-size: 12px;
+}
+
+body[data-demo="management"] .stock-sku,
+body[data-demo="management"] .stock-count span,
+body[data-demo="management"] .stock-message {
+  font-size: 10px;
+}
+
+body[data-demo="management"] .stock-count strong {
+  font-size: 14px;
+}
+
+body[data-demo="management"] .stock-form input,
+body[data-demo="management"] .stock-form button {
+  min-height: 36px;
+  font-size: 11px;
+}
+
+body[data-demo="management"] .order-form .field label {
+  font-size: 11px;
+}
+
+body[data-demo="management"] .order-form .field input,
+body[data-demo="management"] .order-form .field select {
+  min-height: 42px;
+  font-size: 12px;
+}
+
+body[data-demo="management"] .order-message,
+body[data-demo="management"] .system-note {
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+body[data-demo="management"] .management-footer {
+  font-size: 11px;
+}
+
+.motion-progress {
+  position: absolute;
+  z-index: 25;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+html[data-motion-enabled="true"] [data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+@media (max-width: 760px) {
+  .salon-hero-grid,
+  .fashion-hero-grid,
+  .garage-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-demo="salon"] .hero h1 {
+    font-size: clamp(57px, 13vw, 88px);
+  }
+
+  .salon-portrait {
+    width: min(100% - 24px, 560px);
+    margin-left: auto;
+  }
+
+  .salon-side-note {
+    display: none;
+  }
+
+  body[data-demo="salon"] #servicios .card {
+    grid-template-columns: 74px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  body[data-demo="salon"] #servicios .card-image {
+    width: 74px;
+    height: 96px;
+  }
+
+  body[data-demo="salon"] #servicios .card-body {
+    grid-template-columns: 1fr auto;
+    gap: 4px 10px;
+  }
+
+  body[data-demo="salon"] #servicios .card-body p {
+    grid-column: 1 / -1;
+  }
+
+  body[data-demo="salon"] #servicios .card-meta {
+    grid-column: 2;
+    grid-row: 2;
+    min-width: 0;
+  }
+
+  .restaurant-hero-grid {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .restaurant-reserve-card {
+    width: min(100%, 300px);
+  }
+
+  .garage-visual,
+  .garage-visual img {
+    min-height: 350px;
+  }
+
+  body[data-demo="fitness"] #planes .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  body[data-demo="fitness"] #planes .card:first-child {
+    grid-column: 1 / -1;
+  }
+
+  body[data-demo="management"] .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-demo="management"] .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  body[data-demo="salon"] .hero {
+    padding-top: 38px;
+  }
+
+  .salon-portrait img {
+    height: 390px;
+  }
+
+  .salon-portrait figcaption {
+    right: -10px;
+    bottom: 16px;
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  body[data-demo="salon"] #servicios .card {
+    gap: 11px;
+  }
+
+  body[data-demo="salon"] #servicios .card-body {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  body[data-demo="salon"] #servicios .card-meta {
+    grid-column: 1;
+    grid-row: auto;
+    justify-content: flex-start;
+  }
+
+  body[data-demo="restaurant"] .hero h1 {
+    font-size: clamp(56px, 15vw, 82px);
+  }
+
+  body[data-demo="restaurant"] .menu-card {
+    grid-template-columns: 84px minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  body[data-demo="restaurant"] .menu-card .card-image {
+    width: 84px;
+    height: 84px;
+  }
+
+  body[data-demo="restaurant"] .menu-card .card-body {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  body[data-demo="restaurant"] .menu-card .card-meta {
+    grid-column: 1;
+    grid-row: auto;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .garage-visual,
+  .garage-visual img {
+    min-height: 300px;
+  }
+
+  .garage-checklist {
+    gap: 8px;
+    padding: 13px;
+  }
+
+  .garage-checklist strong {
+    font-size: 10px;
+  }
+
+  body[data-demo="garage"] #servicios .card {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-demo="garage"] #servicios .card-image {
+    min-height: 180px;
+    height: 180px;
+  }
+
+  body[data-demo="garage"] #servicios .card-body {
+    grid-template-columns: 1fr auto;
+    padding: 19px;
+  }
+
+  body[data-demo="garage"] #servicios .card-meta {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+  }
+
+  body[data-demo="fitness"] .hero h1 {
+    font-size: clamp(65px, 16vw, 98px);
+  }
+
+  .gym-scoreline div {
+    padding: 16px 9px;
+  }
+
+  .gym-scoreline span {
+    font-size: 8px;
+  }
+
+  body[data-demo="fitness"] #planes .grid {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-demo="fitness"] #planes .card:first-child {
+    grid-column: auto;
+  }
+
+  body[data-demo="fashion"] .hero {
+    padding-top: 28px;
+  }
+
+  body[data-demo="fashion"] .hero h1 {
+    font-size: clamp(61px, 17vw, 86px);
+  }
+
+  .fashion-campaign,
+  .fashion-campaign img {
+    min-height: 360px;
+    height: 360px;
+  }
+
+  body[data-demo="fashion"] #coleccion .grid {
+    gap: 20px 11px;
+  }
+
+  body[data-demo="fashion"] #coleccion .product-card {
+    grid-column: span 6;
+    transform: none;
+  }
+
+  body[data-demo="fashion"] #coleccion .product-card:nth-child(n) {
+    transform: none;
+  }
+
+  body[data-demo="fashion"] #coleccion .product-card:hover {
+    transform: translateY(-3px);
+  }
+
+  body[data-demo="fashion"] #coleccion .card-image {
+    height: 235px;
+  }
+
+  body[data-demo="management"] .topbar {
+    padding-inline: 14px;
+  }
+
+  body[data-demo="management"] .dashboard {
+    padding: 18px 14px;
+  }
+
+  body[data-demo="management"] .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body[data-demo="management"] .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-demo="management"] .panel-body {
+    padding: 13px;
+  }
+
+  body[data-demo="management"] .order-tools {
+    align-items: stretch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-motion-enabled="true"] [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

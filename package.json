@@ -1,0 +1,27 @@
+{
+  "name": "crecimientoweb",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvoIbarrola/crecimientoweb.git"
+  },
+  "scripts": {
+    "build": "esbuild demos/shared/demo-motion.js --bundle --format=iife --target=es2020 --minify --outfile=demos/shared/demo-motion.bundle.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/IvoIbarrola/crecimientoweb/issues"
+  },
+  "homepage": "https://github.com/IvoIbarrola/crecimientoweb#readme",
+  "private": true,
+  "dependencies": {
+    "motion": "^14.8.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
