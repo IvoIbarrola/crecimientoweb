@@ -834,6 +834,343 @@ h1, h2, h3 {
   font-size: 13px;
 }
 
+.conversation-section {
+  padding: 84px 0;
+  border-block: 1px solid var(--line);
+  background: var(--surface-muted);
+}
+
+.conversation-heading {
+  max-width: 720px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.conversation-heading .eyebrow {
+  justify-content: center;
+}
+
+.conversation-heading h2 {
+  margin: 14px 0;
+  font-size: clamp(34px, 4.5vw, 50px);
+  font-weight: 620;
+  line-height: 1.1;
+}
+
+.conversation-heading p {
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+
+.form-disclaimer {
+  display: inline-block;
+  padding: 8px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.conversation-card {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: clamp(22px, 5vw, 42px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.form-progress {
+  margin-bottom: 28px;
+}
+
+.form-progress-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.progress-track {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--surface-muted);
+}
+
+.progress-value {
+  width: 25%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--accent);
+  transition: width 240ms ease;
+}
+
+.step-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.step-list li {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.step-list li[aria-current="step"] {
+  color: var(--accent);
+}
+
+.conversation-step {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.conversation-step:not([hidden]) {
+  animation: conversation-step-enter 180ms ease both;
+}
+
+@keyframes conversation-step-enter {
+  from {
+    transform: translateY(6px);
+    opacity: .5;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.conversation-step[hidden], .form-success[hidden], .conditional-field[hidden] {
+  display: none;
+}
+
+.step-title {
+  margin: 0 0 22px;
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+}
+
+.form-question {
+  margin: 0 0 23px;
+  padding: 0;
+  border: 0;
+}
+
+.form-question legend, .field-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-question legend small {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.form-input {
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--page);
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
+}
+
+.form-input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.form-input[aria-invalid="true"] {
+  border-color: #b64242;
+}
+
+.form-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.form-option {
+  display: flex;
+  min-height: 48px;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1.45;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.form-option:hover {
+  border-color: var(--accent);
+}
+
+.form-option:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.form-option input {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  margin: 1px 0 0;
+  accent-color: var(--accent);
+}
+
+.form-error {
+  min-height: 0;
+  margin: 7px 0 0;
+  color: #a52e2e;
+  font-size: 12px;
+}
+
+html[data-theme="dark"] .form-error {
+  color: #ffaaa1;
+}
+
+.form-error:empty {
+  display: none;
+}
+
+.form-error-summary {
+margin-bottom: 20px;
+padding: 14px 16px;
+border: 1px solid #b64242;
+border-radius: 12px;
+color: var(--text);
+}
+
+.form-error-summary[hidden] {
+display: none;
+}
+
+.form-error-summary p {
+margin: 0 0 5px;
+font-weight: 700;
+}
+
+.form-error-summary ul {
+margin: 0;
+padding-left: 20px;
+font-size: 13px;
+}
+
+.form-error-summary a {
+color: var(--accent);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.form-actions .button {
+  min-width: 138px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.form-actions .button:disabled {
+  cursor: wait;
+  opacity: .7;
+}
+
+.form-help {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.form-success {
+  text-align: center;
+}
+
+.form-success h3 {
+  margin: 0 0 12px;
+  font-size: clamp(27px, 4vw, 36px);
+  line-height: 1.15;
+}
+
+.form-success > p {
+  max-width: 600px;
+  margin: 0 auto 16px;
+  color: var(--muted);
+}
+
+.whatsapp-next-step {
+  margin: 22px 0 30px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface-muted);
+  font-size: 13px;
+}
+
+.discovery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 25px 0;
+  text-align: left;
+}
+
+.discovery-link {
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 13px 15px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 650;
+  text-decoration: none;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.discovery-link:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.form-success-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
 .contact-section {
   padding: 84px 0;
 }
@@ -959,6 +1296,10 @@ html[data-theme="dark"] .contact-panel {
 @media (max-width: 900px) {
   .nav-links {
     gap: 14px;
+  }
+
+  .nav-links a:last-child {
+    display: none;
   }
 
   .nav-links a {
@@ -1139,6 +1480,36 @@ html[data-theme="dark"] .contact-panel {
     padding: 72px 0;
   }
 
+  .conversation-section {
+    padding: 62px 0;
+  }
+
+  .conversation-heading {
+    margin-bottom: 25px;
+  }
+
+  .conversation-card {
+    padding: 22px 18px;
+  }
+
+  .form-options, .discovery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step-list {
+    gap: 5px;
+  }
+
+  .step-list li {
+    font-size: 10px;
+  }
+
+  .form-actions .button {
+    min-width: 0;
+    flex: 1;
+    padding-inline: 14px;
+  }
+
   .section-heading {
     margin-bottom: 32px;
   }
@@ -1265,13 +1636,14 @@ html[data-theme="dark"] .contact-panel {
       <a href="#trabajos">Proyectos</a>
       <a href="#proceso">Cómo trabajamos</a>
       <a href="#preguntas">Preguntas</a>
+      <a href="#formulario">Conversemos</a>
     </nav>
     <div class="header-actions">
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Cambiar al tema oscuro" aria-pressed="false">
         <span class="theme-icon" id="theme-icon" aria-hidden="true">☾</span>
         <span class="theme-label" id="theme-label">Modo oscuro</span>
       </button>
-      <a class="button" href="https://wa.me/5491168253989?text=Hola%2C%20vi%20tu%20pagina%20y%20quiero%20consultar%20por%20un%20proyecto." target="_blank" rel="noopener noreferrer">Hablemos <span aria-hidden="true">↗</span></a>
+      <a class="button" href="#formulario">Conversemos <span aria-hidden="true">↓</span></a>
     </div>
     <details class="mobile-menu">
       <summary>Menú</summary>
@@ -1280,6 +1652,7 @@ html[data-theme="dark"] .contact-panel {
         <a href="#trabajos">Proyectos</a>
         <a href="#proceso">Cómo trabajamos</a>
         <a href="#preguntas">Preguntas frecuentes</a>
+        <a href="#formulario">Conversemos sobre tu proyecto</a>
       </nav>
     </details>
   </div>
@@ -1293,7 +1666,7 @@ html[data-theme="dark"] .contact-panel {
         <h1>Tu negocio merece una presencia digital que inspire <em>confianza.</em></h1>
         <p class="hero-copy">Creo sitios web, aplicaciones y sistemas digitales para que tu negocio se presente mejor, llegue a más personas y trabaje de forma más ordenada.</p>
         <div class="hero-actions">
-          <a class="button" href="https://wa.me/5491168253989?text=Hola%2C%20vi%20tu%20pagina%20y%20quiero%20contarte%20sobre%20mi%20proyecto." target="_blank" rel="noopener noreferrer">Contame tu idea <span aria-hidden="true">↗</span></a>
+          <a class="button" href="#formulario">Conversemos sobre tu proyecto <span aria-hidden="true">↓</span></a>
           <a class="button button-secondary" href="#servicios">Explorar servicios</a>
         </div>
         <p class="hero-note">Trato directo · Propuestas según tu necesidad · Pago al entregar el proyecto</p>
@@ -1498,6 +1871,7 @@ html[data-theme="dark"] .contact-panel {
         <span class="eyebrow">Más que ponerlo online</span>
         <h2>Una solución clara, con acompañamiento.</h2>
         <p>La tecnología tiene que adaptarse a tu negocio, no al revés.</p>
+        <p>Crecimiento Web es un proyecto de diseño y desarrollo digital con trato directo. Cada solución empieza por entender a las personas que la necesitan.</p>
       </div>
       <div class="reasons-grid">
         <article class="reason-card"><h3>Hecho para tu necesidad</h3><p>Definimos la solución según lo que buscas y el alcance que acordemos.</p></article>
@@ -1546,6 +1920,193 @@ html[data-theme="dark"] .contact-panel {
     </div>
   </section>
 
+  <section class="conversation-section" id="formulario">
+    <div class="container">
+      <div class="conversation-heading">
+        <span class="eyebrow">Una primera charla, sin compromiso</span>
+        <h2>Conversemos sobre tu proyecto.</h2>
+        <p>¿Tenés una idea, un proyecto o algo que te gustaría mejorar? Nos gustaría conocerlo. En Crecimiento Web creemos que cada necesidad tiene una posible solución y queremos ayudarte a encontrarla.</p>
+        <span class="form-disclaimer">Completar este formulario no implica ningún compromiso. Solo queremos conocerte un poco mejor.</span>
+      </div>
+
+      <div class="conversation-card">
+        <form id="project-form" novalidate>
+          <div class="form-progress" aria-label="Progreso del formulario">
+            <div class="form-progress-top">
+              <span id="step-counter" aria-live="polite">Paso 1 de 4</span>
+              <span id="step-name">Sobre vos</span>
+            </div>
+            <div class="progress-track" role="progressbar" aria-label="Progreso del formulario" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1" id="progress-bar">
+              <div class="progress-value" id="progress-value"></div>
+            </div>
+          </div>
+
+          <ol class="step-list" aria-label="Pasos del formulario">
+            <li aria-current="step">1. Sobre vos</li>
+            <li>2. En qué ayudarte</li>
+            <li>3. Tu situación</li>
+            <li>4. Contacto</li>
+          </ol>
+
+          <div class="form-error-summary" id="form-error-summary" role="alert" tabindex="-1" hidden>
+            <p>Revisá estos datos para poder continuar:</p>
+            <ul id="form-error-list"></ul>
+          </div>
+
+          <fieldset class="conversation-step" data-step="0" aria-labelledby="step-title-1">
+            <h3 class="step-title" id="step-title-1">Primero, sobre vos</h3>
+            <div class="form-question">
+              <label class="field-label" for="visitor-name">¿Cómo te llamás? <span aria-hidden="true">*</span></label>
+              <input class="form-input" id="visitor-name" name="name" type="text" autocomplete="name" maxlength="80" aria-describedby="name-error" required>
+              <p class="form-error" id="name-error"></p>
+            </div>
+
+            <fieldset class="form-question">
+              <legend>¿Qué tipo de actividad realizás? <small>Opcional</small></legend>
+              <div class="form-options">
+                <label class="form-option"><input type="radio" name="activity" value="Comercio o negocio local">Comercio o negocio local</label>
+                <label class="form-option"><input type="radio" name="activity" value="Emprendimiento">Emprendimiento</label>
+                <label class="form-option"><input type="radio" name="activity" value="Profesional independiente">Profesional independiente</label>
+                <label class="form-option"><input type="radio" name="activity" value="Empresa">Empresa</label>
+                <label class="form-option"><input type="radio" name="activity" value="Organización o institución">Organización o institución</label>
+                <label class="form-option"><input type="radio" name="activity" value="Proyecto personal">Proyecto personal</label>
+                <label class="form-option"><input type="radio" name="activity" value="Otro">Otro</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-question">
+              <legend>¿Tu proyecto ya está funcionando? <small>Opcional</small></legend>
+              <div class="form-options">
+                <label class="form-option"><input type="radio" name="project-stage" value="Sí, hace tiempo">Sí, hace tiempo</label>
+                <label class="form-option"><input type="radio" name="project-stage" value="Sí, estoy comenzando">Sí, estoy comenzando</label>
+                <label class="form-option"><input type="radio" name="project-stage" value="Estoy por comenzar">Estoy por comenzar</label>
+                <label class="form-option"><input type="radio" name="project-stage" value="Todavía es una idea">Todavía es una idea</label>
+              </div>
+            </fieldset>
+          </fieldset>
+
+          <fieldset class="conversation-step" data-step="1" aria-labelledby="step-title-2" hidden>
+            <h3 class="step-title" id="step-title-2">¿En qué podemos ayudarte?</h3>
+            <fieldset class="form-question">
+              <legend>¿Qué aspectos te gustaría mejorar o desarrollar? <small>Podés elegir varias opciones</small></legend>
+              <div class="form-options">
+                <label class="form-option"><input type="checkbox" name="needs" value="Crear una página web">Crear una página web</label>
+                <label class="form-option"><input type="checkbox" name="needs" value="Tener una tienda o catálogo online">Tener una tienda o catálogo online</label>
+                <label class="form-option"><input type="checkbox" name="needs" value="Mejorar mi presencia digital">Mejorar mi presencia digital</label>
+                <label class="form-option"><input type="checkbox" name="needs" value="Organizar mejor mi negocio">Organizar mejor mi negocio</label>
+                <label class="form-option"><input type="checkbox" name="needs" value="Crear un sistema de gestión">Crear un sistema de gestión</label>
+                <label class="form-option"><input type="checkbox" name="needs" value="Automatizar tareas o procesos">Automatizar tareas o procesos</label>
+                <label class="form-option"><input type="checkbox" name="needs" value="Desarrollar una aplicación o herramienta personalizada">Desarrollar una aplicación o herramienta personalizada</label>
+                <label class="form-option"><input type="checkbox" name="needs" value="Mejorar o actualizar un sistema existente">Mejorar o actualizar un sistema existente</label>
+                <label class="form-option"><input type="checkbox" name="needs" value="No estoy seguro, necesito orientación">No estoy seguro, necesito orientación</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-question">
+              <legend>¿Qué buscás conseguir principalmente? <small>Opcional</small></legend>
+              <div class="form-options">
+                <label class="form-option"><input type="radio" name="goal" value="Ahorrar tiempo">Ahorrar tiempo</label>
+                <label class="form-option"><input type="radio" name="goal" value="Conseguir más clientes">Conseguir más clientes</label>
+                <label class="form-option"><input type="radio" name="goal" value="Mejorar la organización">Mejorar la organización</label>
+                <label class="form-option"><input type="radio" name="goal" value="Facilitar el trabajo cotidiano">Facilitar el trabajo cotidiano</label>
+                <label class="form-option"><input type="radio" name="goal" value="Tener mayor presencia digital">Tener mayor presencia digital</label>
+                <label class="form-option"><input type="radio" name="goal" value="Ofrecer una mejor experiencia a mis clientes">Ofrecer una mejor experiencia a mis clientes</label>
+                <label class="form-option"><input type="radio" name="goal" value="Hacer realidad una idea">Hacer realidad una idea</label>
+                <label class="form-option"><input type="radio" name="goal" value="Otro">Otro</label>
+              </div>
+              <div class="conditional-field" id="goal-other-field" hidden>
+                <label class="field-label" for="goal-other">Si querés, contanos cuál</label>
+                <input class="form-input" id="goal-other" name="goal-other" type="text" maxlength="120">
+              </div>
+            </fieldset>
+          </fieldset>
+
+          <fieldset class="conversation-step" data-step="2" aria-labelledby="step-title-3" hidden>
+            <h3 class="step-title" id="step-title-3">Conocer tu situación</h3>
+            <fieldset class="form-question">
+              <legend>¿Actualmente utilizás herramientas digitales para tu negocio? <small>Opcional</small></legend>
+              <div class="form-options">
+                <label class="form-option"><input type="radio" name="digital-tools" value="Sí, varias">Sí, varias</label>
+                <label class="form-option"><input type="radio" name="digital-tools" value="Sí, pero son bastante básicas">Sí, pero son bastante básicas</label>
+                <label class="form-option"><input type="radio" name="digital-tools" value="Utilizo planillas o herramientas manuales">Utilizo planillas o herramientas manuales</label>
+                <label class="form-option"><input type="radio" name="digital-tools" value="No utilizo ninguna">No utilizo ninguna</label>
+                <label class="form-option"><input type="radio" name="digital-tools" value="No corresponde a mi proyecto">No corresponde a mi proyecto</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-question">
+              <legend>¿En qué etapa estás? <small>Opcional</small></legend>
+              <div class="form-options">
+                <label class="form-option"><input type="radio" name="interest-stage" value="Solo estoy explorando posibilidades">Solo estoy explorando posibilidades</label>
+                <label class="form-option"><input type="radio" name="interest-stage" value="Tengo una idea y quiero conocer alternativas">Tengo una idea y quiero conocer alternativas</label>
+                <label class="form-option"><input type="radio" name="interest-stage" value="Estoy buscando una solución">Estoy buscando una solución</label>
+                <label class="form-option"><input type="radio" name="interest-stage" value="Quiero comenzar un proyecto pronto">Quiero comenzar un proyecto pronto</label>
+                <label class="form-option"><input type="radio" name="interest-stage" value="Ya tengo algo desarrollado y quiero mejorarlo">Ya tengo algo desarrollado y quiero mejorarlo</label>
+              </div>
+            </fieldset>
+          </fieldset>
+
+          <fieldset class="conversation-step" data-step="3" aria-labelledby="step-title-4" hidden>
+            <h3 class="step-title" id="step-title-4">Para seguir la charla</h3>
+            <fieldset class="form-question" aria-describedby="contact-method-error">
+              <legend>¿Cómo preferís que nos comuniquemos? <span aria-hidden="true">*</span></legend>
+              <div class="form-options">
+                <label class="form-option"><input id="contact-method-whatsapp" type="radio" name="contact-method" value="WhatsApp" required>WhatsApp</label>
+                <label class="form-option"><input id="contact-method-email" type="radio" name="contact-method" value="Correo electrónico" required>Correo electrónico</label>
+              </div>
+              <p class="form-error" id="contact-method-error"></p>
+            </fieldset>
+
+            <div class="form-question">
+              <label class="field-label" for="contact-value" id="contact-value-label">Tu medio de contacto <span aria-hidden="true">*</span></label>
+              <input class="form-input" id="contact-value" name="contact-value" type="text" autocomplete="email" maxlength="120" aria-describedby="contact-value-help contact-value-error" required>
+              <p class="form-help" id="contact-value-help">Elegí WhatsApp o correo electrónico para indicarte el formato esperado.</p>
+              <p class="form-error" id="contact-value-error"></p>
+            </div>
+
+            <fieldset class="form-question">
+              <legend>¿Te gustaría conocer más sobre nuestros servicios y trabajos? <small>Opcional</small></legend>
+              <div class="form-options">
+                <label class="form-option"><input type="radio" name="more-info" value="Sí, me interesa">Sí, me interesa</label>
+                <label class="form-option"><input type="radio" name="more-info" value="Sí, me gustaría recibir información">Sí, me gustaría recibir información</label>
+                <label class="form-option"><input type="radio" name="more-info" value="Por ahora solo quería compartir mi idea">Por ahora solo quería compartir mi idea</label>
+              </div>
+            </fieldset>
+          </fieldset>
+
+          <div class="form-actions">
+            <button class="button button-secondary" id="back-button" type="button" hidden>Volver</button>
+            <button class="button" id="continue-button" type="button">Continuar <span aria-hidden="true">→</span></button>
+            <button class="button" id="submit-button" type="submit" hidden>Preparar mensaje <span aria-hidden="true">↗</span></button>
+          </div>
+          <p class="form-help" id="whatsapp-disclaimer">Al finalizar, se abrirá WhatsApp con un mensaje listo para revisar. Para que nos llegue, vas a tener que enviarlo desde WhatsApp.</p>
+        </form>
+
+        <section class="form-success" id="form-success" aria-labelledby="form-success-title" tabindex="-1" hidden>
+          <span class="eyebrow">Gracias por acercarte</span>
+          <h3 id="form-success-title">¡Gracias por compartir tu idea!</h3>
+          <p>Cada proyecto tiene sus propias necesidades y nos interesa conocerlas. Esperamos que podamos ayudarte a encontrar una solución que realmente aporte valor a tu negocio.</p>
+          <div class="whatsapp-next-step">
+            Dejamos preparado el mensaje en WhatsApp. Para que podamos recibir tus respuestas, confirmá el envío desde WhatsApp. Si no se abrió automáticamente, podés abrirlo con el botón de abajo.
+          </div>
+          <a class="button" id="whatsapp-message-link" href="https://wa.me/5491168253989" target="_blank" rel="noopener noreferrer">Abrir WhatsApp y enviar mensaje <span aria-hidden="true">↗</span></a>
+
+          <h4>Mientras tanto, podés seguir explorando</h4>
+          <div class="discovery-grid">
+            <a class="discovery-link" href="#servicios">Conocé nuestros servicios <span aria-hidden="true">→</span></a>
+            <a class="discovery-link" href="#trabajos">Explorá nuestros trabajos y proyectos <span aria-hidden="true">→</span></a>
+            <a class="discovery-link" href="#acompanamiento">Descubrí quiénes somos <span aria-hidden="true">→</span></a>
+            <a class="discovery-link" href="#proceso">Conocé nuestra forma de trabajar <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="form-success-actions">
+            <a class="button button-secondary" href="#inicio">Volver a explorar el sitio</a>
+            <a class="button" href="https://wa.me/5491168253989?text=Hola%2C%20quiero%20conversar%20sobre%20mi%20proyecto." target="_blank" rel="noopener noreferrer">¿Querés conversar con nosotros? <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
   <section class="contact-section" id="contacto">
     <div class="container">
       <div class="contact-panel">
@@ -1569,6 +2130,278 @@ html[data-theme="dark"] .contact-panel {
 </footer>
 
 <a class="floating-whatsapp" href="https://wa.me/5491168253989?text=Hola%2C%20vi%20tu%20pagina%20y%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.25 11.5a8.25 8.25 0 0 1-12.2 7.25L3.75 20l1.2-4.15A8.25 8.25 0 1 1 20.25 11.5Z"/><path d="M9 8.1c-.4-.4-1-.35-1.35.1-.55.7-.7 1.55-.42 2.4a9.25 9.25 0 0 0 6.15 6.15c.85.28 1.7.13 2.4-.42.45-.35.5-.95.1-1.35l-1.3-1.3a.95.95 0 0 0-1.2-.13l-.85.55a7.5 7.5 0 0 1-2.65-2.65l.55-.85a.95.95 0 0 0-.13-1.2L9 8.1Z"/></svg></a>
+
+<script>
+(() => {
+  const form = document.getElementById("project-form");
+  const steps = Array.from(form.querySelectorAll(".conversation-step"));
+  const stepLabels = Array.from(document.querySelectorAll(".step-list li"));
+  const stepNames = ["Sobre vos", "En qué podemos ayudarte", "Conocer tu situación", "Contacto"];
+  const counter = document.getElementById("step-counter");
+  const stepName = document.getElementById("step-name");
+  const progressBar = document.getElementById("progress-bar");
+  const progressValue = document.getElementById("progress-value");
+  const backButton = document.getElementById("back-button");
+  const continueButton = document.getElementById("continue-button");
+  const submitButton = document.getElementById("submit-button");
+  const nameInput = document.getElementById("visitor-name");
+  const nameError = document.getElementById("name-error");
+  const contactValue = document.getElementById("contact-value");
+  const contactValueLabel = document.getElementById("contact-value-label");
+  const contactValueHelp = document.getElementById("contact-value-help");
+  const contactValueError = document.getElementById("contact-value-error");
+  const contactMethodError = document.getElementById("contact-method-error");
+  const errorSummary = document.getElementById("form-error-summary");
+  const errorList = document.getElementById("form-error-list");
+  const success = document.getElementById("form-success");
+  const whatsappLink = document.getElementById("whatsapp-message-link");
+  const formDisclaimer = document.getElementById("whatsapp-disclaimer");
+  const goalOtherField = document.getElementById("goal-other-field");
+  const goalOtherInput = document.getElementById("goal-other");
+  let currentStep = 0;
+
+  function clearSummary() {
+    errorSummary.hidden = true;
+    errorList.replaceChildren();
+  }
+
+  function setError(input, errorElement, message) {
+    input.setAttribute("aria-invalid", message ? "true" : "false");
+    errorElement.textContent = message;
+  }
+
+  function validateName() {
+    const valid = nameInput.value.trim().length > 0;
+    setError(nameInput, nameError, valid ? "" : "Contanos cómo te llamás para poder dirigirnos a vos.");
+    return valid ? [] : [{ input: nameInput, message: "Escribí tu nombre.", step: 0 }];
+  }
+
+  function selectedContactMethod() {
+    return form.querySelector('input[name="contact-method"]:checked')?.value || "";
+  }
+
+  function validateContact() {
+    const method = selectedContactMethod();
+    const radios = Array.from(form.querySelectorAll('input[name="contact-method"]'));
+    const methodValid = Boolean(method);
+    radios.forEach((radio) => radio.setAttribute("aria-invalid", methodValid ? "false" : "true"));
+    contactMethodError.textContent = methodValid ? "" : "Elegí WhatsApp o correo electrónico.";
+
+    const value = contactValue.value.trim();
+    let valueValid = false;
+    let valueMessage = "";
+
+    if (!method) {
+      valueMessage = "Primero elegí cómo preferís que nos comuniquemos.";
+    } else if (!value) {
+      valueMessage = method === "WhatsApp"
+        ? "Escribí tu número de WhatsApp, incluido el código de país."
+        : "Escribí tu correo electrónico.";
+    } else if (method === "WhatsApp") {
+      const digits = value.replace(/\D/g, "");
+      valueValid = /^\+?[\d\s().-]+$/.test(value) && digits.length >= 8 && digits.length <= 15;
+      valueMessage = valueValid ? "" : "Revisá el número: incluí el código de país y usá entre 8 y 15 dígitos.";
+    } else {
+      valueValid = contactValue.checkValidity();
+      valueMessage = valueValid ? "" : "Revisá el correo. Por ejemplo: nombre@dominio.com.";
+    }
+
+    setError(contactValue, contactValueError, valueMessage);
+    const errors = [];
+    if (!methodValid) {
+      errors.push({ input: radios[0], message: "Elegí un medio de contacto.", step: 3 });
+    }
+    if (!valueValid) {
+      errors.push({ input: contactValue, message: "Ingresá un medio de contacto válido.", step: 3 });
+    }
+    return errors;
+  }
+
+  function updateStep(nextStep, moveFocus = true) {
+    currentStep = nextStep;
+    steps.forEach((step, index) => {
+      step.hidden = index !== currentStep;
+    });
+    stepLabels.forEach((label, index) => {
+      if (index === currentStep) {
+        label.setAttribute("aria-current", "step");
+      } else {
+        label.removeAttribute("aria-current");
+      }
+    });
+    counter.textContent = `Paso ${currentStep + 1} de ${steps.length}`;
+    stepName.textContent = stepNames[currentStep];
+    progressBar.setAttribute("aria-valuenow", String(currentStep + 1));
+    progressValue.style.width = `${((currentStep + 1) / steps.length) * 100}%`;
+    backButton.hidden = currentStep === 0;
+    continueButton.hidden = currentStep === steps.length - 1;
+    submitButton.hidden = currentStep !== steps.length - 1;
+    clearSummary();
+
+    if (moveFocus) {
+      const heading = steps[currentStep].querySelector(".step-title");
+      heading.setAttribute("tabindex", "-1");
+      heading.focus({ preventScroll: true });
+      heading.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  }
+
+  function showErrors(errors) {
+    errorList.replaceChildren();
+    errors.forEach(({ input, message, step }) => {
+      const item = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = `#${input.id}`;
+      link.textContent = message;
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        updateStep(step, false);
+        input.focus({ preventScroll: true });
+      });
+      item.append(link);
+      errorList.append(item);
+    });
+    errorSummary.hidden = false;
+    errorSummary.focus();
+  }
+
+  function validateCurrentStep() {
+    if (currentStep === 0) {
+      return validateName();
+    }
+    if (currentStep === 3) {
+      return [...validateName(), ...validateContact()];
+    }
+    return [];
+  }
+
+  function updateContactInput() {
+    const method = selectedContactMethod();
+    const isEmail = method === "Correo electrónico";
+    contactValue.type = isEmail ? "email" : "text";
+    contactValue.inputMode = isEmail ? "email" : "tel";
+    contactValue.autocomplete = isEmail ? "email" : "tel";
+    contactValue.placeholder = isEmail ? "nombre@dominio.com" : "+54 9 11 1234-5678";
+    contactValueHelp.textContent = isEmail
+      ? "Usaremos este correo para responderte."
+      : "Incluí el código de país, por ejemplo +54 9 11 1234-5678.";
+    contactValueLabel.innerHTML = `${isEmail ? "Tu correo electrónico" : "Tu número de WhatsApp"} <span aria-hidden="true">*</span>`;
+    if (contactValue.getAttribute("aria-invalid") === "true") {
+      validateContact();
+    }
+  }
+
+  function answer(name) {
+    return form.querySelector(`input[name="${name}"]:checked`)?.value || "";
+  }
+
+  function answers(name) {
+    return Array.from(form.querySelectorAll(`input[name="${name}"]:checked`), (input) => input.value);
+  }
+
+  function reportLine(label, value) {
+    return `- ${label}: ${value || "No indicado"}`;
+  }
+
+  function createWhatsAppMessage() {
+    const name = nameInput.value.trim();
+    const goal = answer("goal");
+    const customGoal = goal === "Otro" && goalOtherInput.value.trim()
+      ? `Otro: ${goalOtherInput.value.trim()}`
+      : goal;
+    const lines = [
+      `${name} completó el formulario de primer contacto de Crecimiento Web.`,
+      "",
+      "Estos son los datos que compartió:",
+      reportLine("Nombre", name),
+      reportLine("Actividad", answer("activity")),
+      reportLine("Estado del proyecto", answer("project-stage")),
+      reportLine("Aspectos a mejorar o desarrollar", answers("needs").join(", ")),
+      reportLine("Objetivo principal", customGoal),
+      reportLine("Herramientas digitales actuales", answer("digital-tools")),
+      reportLine("Etapa del proyecto", answer("interest-stage")),
+      reportLine("Medio de contacto preferido", selectedContactMethod()),
+      reportLine("Contacto", contactValue.value.trim()),
+      reportLine("Interés en conocer servicios y trabajos", answer("more-info"))
+    ];
+    return lines.join("\n");
+  }
+
+  form.querySelectorAll('input[name="contact-method"]').forEach((radio) => {
+    radio.addEventListener("change", () => {
+      updateContactInput();
+      clearSummary();
+    });
+  });
+
+  form.querySelectorAll('input[name="goal"]').forEach((radio) => {
+    radio.addEventListener("change", () => {
+      goalOtherField.hidden = answer("goal") !== "Otro";
+    });
+  });
+
+  nameInput.addEventListener("blur", validateName);
+  nameInput.addEventListener("input", () => {
+    if (nameInput.getAttribute("aria-invalid") === "true") {
+      validateName();
+    }
+    clearSummary();
+  });
+
+  contactValue.addEventListener("blur", () => {
+    if (selectedContactMethod()) {
+      validateContact();
+    }
+  });
+  contactValue.addEventListener("input", () => {
+    if (contactValue.getAttribute("aria-invalid") === "true") {
+      validateContact();
+    }
+    clearSummary();
+  });
+
+  form.addEventListener("change", (event) => {
+    if (event.target.name === "contact-method") {
+      return;
+    }
+    clearSummary();
+  });
+
+  continueButton.addEventListener("click", () => {
+    const errors = validateCurrentStep();
+    if (errors.length) {
+      showErrors(errors);
+      return;
+    }
+    updateStep(currentStep + 1);
+  });
+
+  backButton.addEventListener("click", () => updateStep(currentStep - 1));
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const errors = [...validateName(), ...validateContact()];
+    if (errors.length) {
+      const firstStep = Math.min(...errors.map((error) => error.step));
+      updateStep(firstStep, false);
+      showErrors(errors);
+      return;
+    }
+
+    const message = createWhatsAppMessage();
+    const whatsappUrl = `https://wa.me/5491168253989?text=${encodeURIComponent(message)}`;
+    whatsappLink.href = whatsappUrl;
+    form.hidden = true;
+    formDisclaimer.hidden = true;
+    success.hidden = false;
+    success.focus();
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  });
+
+  updateContactInput();
+  updateStep(0, false);
+})();
+</script>
 
 <script>
 (() => {
