@@ -5,23 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Concepto de peluquería elegante con servicios, precios de muestra y contacto directo.">
   <title>Casa Lila | Concepto de peluquería</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../shared/demo.css">
+  <link rel="stylesheet" href="../shared/art-directions.css">
   <style>body { --hero-image: url("https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1800&q=85"); }</style>
 </head>
 <body data-demo="salon">
   <div class="demo-notice">Concepto ficticio · Servicios, precios y dirección ilustrativos</div>
-  <header class="demo-header"><nav class="wrap nav" aria-label="Navegación principal">
-    <a class="brand" href="#inicio">Casa Lila</a>
-    <div class="nav-links"><a href="#filosofia">Filosofía</a><a href="#servicios">Servicios</a><a href="#espacio">El espacio</a></div>
-    <a class="button-small" data-wa="Hola, vi la demo de peluquería y quiero consultar por una web para mi negocio." href="#">Hablemos</a>
-  </nav></header>
+  <header class="demo-header">
+    <div class="motion-progress" data-motion-progress></div>
+    <nav class="wrap nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio">Casa Lila</a>
+      <div class="nav-links"><a href="#filosofia">Filosofía</a><a href="#servicios">Servicios</a><a href="#espacio">El espacio</a></div>
+      <a class="button-small" data-wa="Hola, vi la demo de peluquería y quiero consultar por una web para mi negocio." href="#">Hablemos</a>
+    </nav>
+  </header>
   <main>
-    <section class="hero" id="inicio"><div class="wrap hero-content">
-      <span class="eyebrow">Un momento para vos · salón de belleza de muestra</span>
-      <h1>Tu pausa, tu forma de brillar.</h1>
-      <p>Un espacio tranquilo para cuidar tu pelo, probar algo nuevo y sentirte bien en cada detalle.</p>
-      <a class="button" data-wa="Hola, vi la demo de Casa Lila y quisiera consultar por un turno." href="#">Consultar por un turno ↗</a>
-    </div></section>
+    <section class="hero" id="inicio">
+      <div class="wrap salon-hero-grid">
+        <div class="hero-content" data-motion-intro>
+          <span class="eyebrow">Un momento para vos · salón de belleza de muestra</span>
+          <h1>Tu pausa,<br><em>tu forma</em><br>de brillar.</h1>
+          <p>Un espacio tranquilo para cuidar tu pelo, probar algo nuevo y sentirte bien en cada detalle.</p>
+          <div class="salon-actions">
+            <a class="button" data-wa="Hola, vi la demo de Casa Lila y quisiera consultar por un turno." href="#">Consultar por un turno ↗</a>
+            <a class="salon-secondary-link" href="#servicios">Ver rituales y precios</a>
+          </div>
+        </div>
+        <figure class="salon-portrait">
+          <span class="salon-side-note" aria-hidden="true">Belleza con tiempo · Buenos Aires</span>
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=88" alt="Profesional de belleza trabajando en un salón, imagen ilustrativa">
+          <figcaption><span>Un ritual para vos</span>La belleza también está en bajar el ritmo.</figcaption>
+        </figure>
+      </div>
+    </section>
     <section class="section" id="filosofia" data-reveal><div class="wrap split">
       <div><span class="eyebrow">Casa Lila · una idea de marca</span><h2>La belleza también está en bajar el ritmo.</h2><p>Casa Lila es una peluquería ficticia. Esta propuesta prioriza una navegación serena, espacios amplios y una presentación delicada para que cada visita se sienta simple y cuidada.</p><a class="button-outline" data-wa="Hola, quiero consultar por un sitio web elegante para mi negocio." href="#">¿Buscas algo así para tu negocio?</a></div>
       <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=1100&q=85" alt="Interior sereno de un salón de belleza, imagen ilustrativa">
@@ -53,5 +72,6 @@
   <footer class="demo-footer"><div class="wrap footer-row"><p>Casa Lila · Concepto ficticio</p><a class="back-link" href="../../index.html">← Volver a Crecimiento Web</a></div></footer>
   <a class="whatsapp-float" data-wa="Hola, vi la demo de peluquería y quiero consultar por una web." href="#" aria-label="Consultar por WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.25 11.5a8.25 8.25 0 0 1-12.2 7.25L3.75 20l1.2-4.15A8.25 8.25 0 1 1 20.25 11.5Z"/><path d="M9 8.1c-.4-.4-1-.35-1.35.1-.55.7-.7 1.55-.42 2.4a9.25 9.25 0 0 0 6.15 6.15c.85.28 1.7.13 2.4-.42.45-.35.5-.95.1-1.35l-1.3-1.3a.95.95 0 0 0-1.2-.13l-.85.55a7.5 7.5 0 0 1-2.65-2.65l.55-.85a.95.95 0 0 0-.13-1.2L9 8.1Z"/></svg></a>
   <script src="../shared/demo.js" defer></script>
+  <script src="../shared/demo-motion.bundle.js" defer></script>
 </body>
 </html>

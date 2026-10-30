@@ -5,23 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Concepto de sitio web para un bar con menú digital y administración de muestra.">
   <title>La Mesa del Puerto | Concepto de restaurante</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../shared/demo.css">
+  <link rel="stylesheet" href="../shared/art-directions.css">
   <style>
     body { --hero-image: url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85"); }
     .menu-section { scroll-margin-top: 85px; }
-    body[data-demo="restaurant"] .hero { text-align: center; }
-    body[data-demo="restaurant"] .hero-content { margin-inline: auto; }
-    body[data-demo="restaurant"] .hero h1 { margin-inline: auto; }
-    body[data-demo="restaurant"] .hero p { margin-inline: auto; }
-    body[data-demo="restaurant"] .menu-heading { margin-top: 44px; font-family: var(--serif); font-size: 30px; font-weight: 500; }
-    body[data-demo="restaurant"] .menu-heading:not(:first-of-type) { margin-top: 60px; padding-top: 25px; border-top: 1px solid var(--line); }
-    body[data-demo="restaurant"] .menu-card .card-image { height: 185px; }
-    body[data-demo="restaurant"] .menu-card .card-body { padding: 18px; }
   </style>
 </head>
 <body data-demo="restaurant">
   <div class="demo-notice">Concepto ficticio para mostrar posibilidades · Panel administrativo simulado</div>
   <header class="demo-header">
+    <div class="motion-progress" data-motion-progress></div>
     <nav class="wrap nav" aria-label="Navegación principal">
       <a class="brand" href="#inicio">La Mesa del Puerto</a>
       <div class="nav-links"><a href="#menu">Menú</a><a href="#historia">El bar</a><a href="#resenas">Reseñas</a></div>
@@ -30,11 +27,19 @@
   </header>
   <main>
     <section class="hero" id="inicio">
-      <div class="wrap hero-content">
-        <span class="eyebrow">Bar de cocina porteña · concepto de muestra</span>
-        <h1>Una mesa lista para compartir.</h1>
-        <p>Sabores de estación, platos para el centro y una barra que siempre tiene algo para brindar.</p>
-        <a class="button" href="#menu">Descubrir el menú <span aria-hidden="true">↓</span></a>
+      <div class="wrap restaurant-hero-grid">
+        <div class="hero-content" data-motion-intro>
+          <span class="eyebrow">Bar de cocina porteña · concepto de muestra</span>
+          <h1>La sobremesa es otra forma de quedarse.</h1>
+          <p>Fuego lento, platos al centro y una barra que sabe cuándo servir otra ronda.</p>
+          <a class="button" href="#menu">Abrir la carta <span aria-hidden="true">↓</span></a>
+        </div>
+        <aside class="restaurant-reserve-card" aria-label="Horario y reservas">
+          <span>La mesa está servida</span>
+          <strong>12—00</strong>
+          <small>Martes a domingo · cocina de estación</small>
+          <a data-wa="Hola, quisiera consultar una reserva en La Mesa del Puerto, la demo de restaurante." href="#">Reservar una mesa ↗</a>
+        </aside>
       </div>
     </section>
     <section class="section" id="historia" data-reveal>
@@ -59,19 +64,19 @@
           <h2>Para pedir algo rico.</h2>
           <p>Una carta organizada por momentos, con platos y precios que el negocio podría mantener actualizados.</p>
         </div>
-        <h3 class="menu-heading">Para empezar</h3>
+        <h3 class="menu-heading" id="entradas">01 · Para empezar</h3>
         <div class="grid" data-menu-list>
           <article class="card menu-card" data-category="Entradas"><img class="card-image" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80" alt="Provoleta con hierbas y tomates"><div class="card-body"><span class="demo-label">Entradas</span><h3>Provoleta de la casa</h3><p>Tomates asados, orégano fresco y pan de masa madre.</p><div class="card-meta"><span>Para compartir</span><strong class="price">$8.900</strong></div></div></article>
           <article class="card menu-card" data-category="Entradas"><img class="card-image" src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80" alt="Empanadas recién horneadas"><div class="card-body"><span class="demo-label">Entradas</span><h3>Empanadas cortadas a cuchillo</h3><p>Carne suave, cebolla dorada y un toque de comino.</p><div class="card-meta"><span>3 unidades</span><strong class="price">$7.200</strong></div></div></article>
           <article class="card menu-card" data-category="Entradas"><img class="card-image" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80" alt="Plato fresco con hojas verdes"><div class="card-body"><span class="demo-label">Entradas</span><h3>Buñuelos de acelga</h3><p>Con alioli de limón y hojas frescas.</p><div class="card-meta"><span>6 unidades</span><strong class="price">$6.800</strong></div></div></article>
-          <h3 class="menu-heading">Platos principales</h3>
+          <h3 class="menu-heading" id="principales">02 · Platos principales</h3>
           <article class="card menu-card" data-category="Platos principales"><img class="card-image" src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=900&q=80" alt="Milanesa crocante con guarnición"><div class="card-body"><span class="demo-label">Platos principales</span><h3>Milanesa del puerto</h3><p>Rebozado crocante, puré cremoso y limón.</p><div class="card-meta"><span>Clásico de la casa</span><strong class="price">$16.500</strong></div></div></article>
           <article class="card menu-card" data-category="Platos principales"><img class="card-image" src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=80" alt="Pasta fresca con salsa y hierbas"><div class="card-body"><span class="demo-label">Platos principales</span><h3>Ñoquis de calabaza</h3><p>Manteca de salvia, nueces y queso estacionado.</p><div class="card-meta"><span>Vegetariano</span><strong class="price">$14.200</strong></div></div></article>
           <article class="card menu-card" data-category="Platos principales"><img class="card-image" src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=80" alt="Pescado servido con vegetales"><div class="card-body"><span class="demo-label">Platos principales</span><h3>Pesca del día</h3><p>Con vegetales de estación y salsa cítrica.</p><div class="card-meta"><span>Según disponibilidad</span><strong class="price">$18.900</strong></div></div></article>
-          <h3 class="menu-heading">De la barra</h3>
+          <h3 class="menu-heading" id="bebidas">03 · De la barra</h3>
           <article class="card menu-card" data-category="Bebidas"><img class="card-image" src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=900&q=80" alt="Trago de autor servido con hielo"><div class="card-body"><span class="demo-label">Bebidas</span><h3>Vermut de la casa</h3><p>Vermut rojo, soda, naranja y aceituna.</p><div class="card-meta"><span>Trago</span><strong class="price">$6.900</strong></div></div></article>
           <article class="card menu-card" data-category="Bebidas"><img class="card-image" src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=900&q=80" alt="Bebida fresca de la barra"><div class="card-body"><span class="demo-label">Bebidas</span><h3>Limonada con menta</h3><p>Limón exprimido, menta fresca y jengibre.</p><div class="card-meta"><span>Sin alcohol</span><strong class="price">$4.800</strong></div></div></article>
-          <h3 class="menu-heading">Algo dulce</h3>
+          <h3 class="menu-heading" id="postres">04 · Algo dulce</h3>
           <article class="card menu-card" data-category="Postres"><img class="card-image" src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80" alt="Postre dulce servido en plato"><div class="card-body"><span class="demo-label">Postres</span><h3>Flan casero</h3><p>Dulce de leche y crema batida.</p><div class="card-meta"><span>De la casa</span><strong class="price">$5.500</strong></div></div></article>
         </div>
         <div class="admin-actions" style="justify-content:center;margin-top:25px"><button class="button-outline" type="button" data-admin-toggle="menu-admin" aria-expanded="false">Probar administración del menú</button></div>
@@ -108,5 +113,6 @@
   <footer class="demo-footer"><div class="wrap footer-row"><p>La Mesa del Puerto · Concepto ficticio</p><a class="back-link" href="../../index.html">← Volver a Crecimiento Web</a></div></footer>
   <a class="whatsapp-float" data-wa="Hola, vi la demo del restaurante y quiero consultar por una web." href="#" aria-label="Consultar por WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.25 11.5a8.25 8.25 0 0 1-12.2 7.25L3.75 20l1.2-4.15A8.25 8.25 0 1 1 20.25 11.5Z"/><path d="M9 8.1c-.4-.4-1-.35-1.35.1-.55.7-.7 1.55-.42 2.4a9.25 9.25 0 0 0 6.15 6.15c.85.28 1.7.13 2.4-.42.45-.35.5-.95.1-1.35l-1.3-1.3a.95.95 0 0 0-1.2-.13l-.85.55a7.5 7.5 0 0 1-2.65-2.65l.55-.85a.95.95 0 0 0-.13-1.2L9 8.1Z"/></svg></a>
   <script src="../shared/demo.js" defer></script>
+  <script src="../shared/demo-motion.bundle.js" defer></script>
 </body>
 </html>

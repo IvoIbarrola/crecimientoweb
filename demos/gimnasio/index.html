@@ -5,23 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Concepto de gimnasio con servicios, precios de muestra y test para recomendar una opción inicial.">
   <title>Ritmo Club | Concepto de gimnasio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../shared/demo.css">
+  <link rel="stylesheet" href="../shared/art-directions.css">
   <style>body { --hero-image: url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=85"); }</style>
 </head>
 <body data-demo="fitness">
   <div class="demo-notice">Concepto ficticio · Planes, precios y dirección ilustrativos</div>
-  <header class="demo-header"><nav class="wrap nav" aria-label="Navegación principal">
-    <a class="brand" href="#inicio">RITMO / CLUB</a>
-    <div class="nav-links"><a href="#planes">Planes</a><a href="#test">Encuentra tu ritmo</a><a href="#espacio">El club</a></div>
-    <a class="button-small" data-wa="Hola, vi la demo del gimnasio y quiero consultar por una web para mi negocio." href="#">Consultar</a>
-  </nav></header>
+  <header class="demo-header">
+    <div class="motion-progress" data-motion-progress></div>
+    <nav class="wrap nav" aria-label="Navegación principal">
+      <a class="brand" href="#inicio">RITMO / CLUB</a>
+      <div class="nav-links"><a href="#planes">Planes</a><a href="#test">Encuentra tu ritmo</a><a href="#espacio">El club</a></div>
+      <a class="button-small" data-wa="Hola, vi la demo del gimnasio y quiero consultar por una web para mi negocio." href="#">Consultar</a>
+    </nav>
+  </header>
   <main>
-    <section class="hero" id="inicio"><div class="wrap hero-content">
-      <span class="eyebrow">Movimiento a tu manera</span>
-      <h1>Empieza donde estás.</h1>
-      <p>Un espacio para entrenar con energía, acompañamiento y objetivos que se sienten posibles.</p>
-      <a class="button" href="#test">Encontrar mi plan ↓</a>
-    </div></section>
+    <section class="hero" id="inicio">
+      <div class="wrap hero-content" data-motion-intro>
+        <span class="eyebrow">Ritmo Club · entrenamiento para todos los niveles</span>
+        <h1>Fuerza para<br><em>tu propio</em><br>ritmo.</h1>
+        <p>Entrenamiento que se adapta a tu vida, con objetivos que se sienten posibles y un equipo que te acompaña.</p>
+        <a class="button" href="#test">Encuentra tu punto de partida ↓</a>
+      </div>
+    </section>
+    <section class="gym-scoreline" aria-label="Datos ilustrativos del club">
+      <div><strong>06:30</strong><span>Primera clase</span></div>
+      <div><strong>01:1</strong><span>Acompañamiento real</span></div>
+      <div><strong>0—100</strong><span>Tu ritmo, tu nivel</span></div>
+    </section>
     <section class="section" id="planes"><div class="wrap">
       <div class="section-heading"><span class="eyebrow">Planes · precios de ejemplo</span><h2>Tu rutina, tu ritmo.</h2><p>Los planes y valores son ficticios. El panel permite probar cómo se actualizarían los precios.</p></div>
       <div class="grid">
@@ -53,5 +67,6 @@
   <footer class="demo-footer"><div class="wrap footer-row"><p>Ritmo Club · Concepto ficticio</p><a class="back-link" href="../../index.html">← Volver a Crecimiento Web</a></div></footer>
   <a class="whatsapp-float" data-wa="Hola, vi la demo del gimnasio y quiero consultar por una web." href="#" aria-label="Consultar por WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.25 11.5a8.25 8.25 0 0 1-12.2 7.25L3.75 20l1.2-4.15A8.25 8.25 0 1 1 20.25 11.5Z"/><path d="M9 8.1c-.4-.4-1-.35-1.35.1-.55.7-.7 1.55-.42 2.4a9.25 9.25 0 0 0 6.15 6.15c.85.28 1.7.13 2.4-.42.45-.35.5-.95.1-1.35l-1.3-1.3a.95.95 0 0 0-1.2-.13l-.85.55a7.5 7.5 0 0 1-2.65-2.65l.55-.85a.95.95 0 0 0-.13-1.2L9 8.1Z"/></svg></a>
   <script src="../shared/demo.js" defer></script>
+  <script src="../shared/demo-motion.bundle.js" defer></script>
 </body>
 </html>
