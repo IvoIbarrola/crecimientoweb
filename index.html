@@ -2806,12 +2806,22 @@ html {
   min-height: 270px;
 }
 
+#proceso .carousel-track > .step-card {
+  flex: 0 0 calc((100% - 36px) / 3);
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
 @media (max-width: 900px) {
   .carousel-track > .service-card {
     flex-basis: calc((100% - 18px) / 2);
   }
 
   #demos .carousel-track > .demo-card {
+    flex-basis: calc((100% - 18px) / 2);
+  }
+
+  #proceso .carousel-track > .step-card {
     flex-basis: calc((100% - 18px) / 2);
   }
 }
@@ -2827,6 +2837,11 @@ html {
   #demos .carousel-track > .demo-card {
     flex-basis: min(84%, 330px);
     min-height: 275px;
+  }
+
+  #proceso .carousel-track > .step-card {
+    flex-basis: min(84%, 330px);
+    min-height: 245px;
   }
 
   .carousel-controls {
@@ -3166,11 +3181,18 @@ html {
         <h2>De la primera charla a la entrega.</h2>
         <p>No hace falta tener todo resuelto para empezar. Conversamos sobre tu idea y definimos juntos el siguiente paso.</p>
       </div>
-      <div class="steps-grid">
-        <article class="step-card"><span class="step-index">01 / ESCUCHAR</span><h3>Me cuentas tu idea</h3><p>Hablamos de tu negocio, lo que necesitas y qué te gustaría mejorar.</p></article>
-        <article class="step-card"><span class="step-index">02 / DEFINIR</span><h3>Propuesta a medida</h3><p>Delimitamos el alcance y preparo un presupuesto acorde al proyecto.</p></article>
-        <article class="step-card"><span class="step-index">03 / DESARROLLAR</span><h3>Construimos la solución</h3><p>Desarrollo el proyecto según lo acordado, con foco en tus objetivos.</p></article>
-        <article class="step-card"><span class="step-index">04 / ENTREGAR</span><h3>Tu proyecto listo</h3><p>Al completar el trabajo, realizas el pago y recibes la solución acordada.</p></article>
+      <div class="carousel-shell" data-carousel="process">
+        <div class="steps-grid carousel-track" id="process-carousel" aria-label="Etapas del proceso de trabajo" tabindex="0">
+          <article class="step-card"><span class="step-index">01 / ESCUCHAR</span><h3>Me cuentas tu idea</h3><p>Hablamos de tu negocio, lo que necesitas y qué te gustaría mejorar.</p></article>
+          <article class="step-card"><span class="step-index">02 / DEFINIR</span><h3>Propuesta a medida</h3><p>Delimitamos el alcance y preparo un presupuesto acorde al proyecto.</p></article>
+          <article class="step-card"><span class="step-index">03 / DESARROLLAR</span><h3>Construimos la solución</h3><p>Desarrollo el proyecto según lo acordado, con foco en tus objetivos.</p></article>
+          <article class="step-card"><span class="step-index">04 / ENTREGAR</span><h3>Tu proyecto listo</h3><p>Al completar el trabajo, realizas el pago y recibes la solución acordada.</p></article>
+        </div>
+        <div class="carousel-controls" aria-label="Controles del carrusel de etapas">
+          <span class="carousel-status" aria-live="polite">01 / 04</span>
+          <button class="carousel-arrow" type="button" data-carousel-prev aria-label="Ver etapa anterior">←</button>
+          <button class="carousel-arrow" type="button" data-carousel-next aria-label="Ver etapa siguiente">→</button>
+        </div>
       </div>
     </div>
   </section>
