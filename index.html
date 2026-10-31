@@ -3491,19 +3491,10 @@ html {
 
           <fieldset class="conversation-step" data-step="3" aria-labelledby="step-title-4" hidden>
             <h3 class="step-title" id="step-title-4">Para seguir la charla</h3>
-            <fieldset class="form-question" aria-describedby="contact-method-error">
-              <legend>¿Cómo preferís que nos comuniquemos? <span aria-hidden="true">*</span></legend>
-              <div class="form-options">
-                <label class="form-option"><input id="contact-method-whatsapp" type="radio" name="contact-method" value="WhatsApp" required>WhatsApp</label>
-                <label class="form-option"><input id="contact-method-email" type="radio" name="contact-method" value="Correo electrónico" required>Correo electrónico</label>
-              </div>
-              <p class="form-error" id="contact-method-error"></p>
-            </fieldset>
-
             <div class="form-question">
-              <label class="field-label" for="contact-value" id="contact-value-label">Tu medio de contacto <span aria-hidden="true">*</span></label>
-              <input class="form-input" id="contact-value" name="contact-value" type="text" autocomplete="email" maxlength="120" aria-describedby="contact-value-help contact-value-error" required>
-              <p class="form-help" id="contact-value-help">Elegí WhatsApp o correo electrónico para indicarte el formato esperado.</p>
+              <label class="field-label" for="contact-value" id="contact-value-label">Tu número de WhatsApp <span aria-hidden="true">*</span></label>
+              <input class="form-input" id="contact-value" name="contact-value" type="tel" inputmode="tel" autocomplete="tel" maxlength="30" placeholder="+54 9 11 1234-5678" aria-describedby="contact-value-help contact-value-error" required>
+              <p class="form-help" id="contact-value-help">Incluí el código de país, por ejemplo +54 9 11 1234-5678.</p>
               <p class="form-error" id="contact-value-error"></p>
             </div>
 
@@ -3590,10 +3581,8 @@ html {
   const nameInput = document.getElementById("visitor-name");
   const nameError = document.getElementById("name-error");
   const contactValue = document.getElementById("contact-value");
-  const contactValueLabel = document.getElementById("contact-value-label");
   const contactValueHelp = document.getElementById("contact-value-help");
   const contactValueError = document.getElementById("contact-value-error");
-  const contactMethodError = document.getElementById("contact-method-error");
   const errorSummary = document.getElementById("form-error-summary");
   const errorList = document.getElementById("form-error-list");
   const success = document.getElementById("form-success");
@@ -3619,45 +3608,20 @@ html {
     return valid ? [] : [{ input: nameInput, message: "Escribí tu nombre.", step: 0 }];
   }
 
-  function selectedContactMethod() {
-    return form.querySelector('input[name="contact-method"]:checked')?.value || "";
-  }
-
   function validateContact() {
-    const method = selectedContactMethod();
-    const radios = Array.from(form.querySelectorAll('input[name="contact-method"]'));
-    const methodValid = Boolean(method);
-    radios.forEach((radio) => radio.setAttribute("aria-invalid", methodValid ? "false" : "true"));
-    contactMethodError.textContent = methodValid ? "" : "Elegí WhatsApp o correo electrónico.";
-
     const value = contactValue.value.trim();
-    let valueValid = false;
-    let valueMessage = "";
-
-    if (!method) {
-      valueMessage = "Primero elegí cómo preferís que nos comuniquemos.";
-    } else if (!value) {
-      valueMessage = method === "WhatsApp"
-        ? "Escribí tu número de WhatsApp, incluido el código de país."
-        : "Escribí tu correo electrónico.";
-    } else if (method === "WhatsApp") {
-      const digits = value.replace(/\D/g, "");
-      valueValid = /^\+?[\d\s().-]+$/.test(value) && digits.length >= 8 && digits.length <= 15;
-      valueMessage = valueValid ? "" : "Revisá el número: incluí el código de país y usá entre 8 y 15 dígitos.";
-    } else {
-      valueValid = contactValue.checkValidity();
-      valueMessage = valueValid ? "" : "Revisá el correo. Por ejemplo: nombre@dominio.com.";
-    }
+    const digits = value.replace(/\D/g, "");
+    const valueValid = /^\+?[\d\s().-]+$/.test(value) && digits.length >= 8 && digits.length <= 15;
+    const valueMessage = !value
+      ? "Escribí tu número de WhatsApp, incluido el código de país."
+      : valueValid
+        ? ""
+        : "Revisá el número: incluí el código de país y usá entre 8 y 15 dígitos.";
 
     setError(contactValue, contactValueError, valueMessage);
-    const errors = [];
-    if (!methodValid) {
-      errors.push({ input: radios[0], message: "Elegí un medio de contacto.", step: 3 });
-    }
-    if (!valueValid) {
-      errors.push({ input: contactValue, message: "Ingresá un medio de contacto válido.", step: 3 });
-    }
-    return errors;
+    return valueValid
+      ? []
+      : [{ input: contactValue, message: "Ingresá un número de WhatsApp válido.", step: 3 }];
   }
 
   function updateStep(nextStep, moveFocus = true) {
@@ -3719,16 +3683,11 @@ html {
   }
 
   function updateContactInput() {
-    const method = selectedContactMethod();
-    const isEmail = method === "Correo electrónico";
-    contactValue.type = isEmail ? "email" : "text";
-    contactValue.inputMode = isEmail ? "email" : "tel";
-    contactValue.autocomplete = isEmail ? "email" : "tel";
-    contactValue.placeholder = isEmail ? "nombre@dominio.com" : "+54 9 11 1234-5678";
-    contactValueHelp.textContent = isEmail
-      ? "Usaremos este correo para responderte."
-      : "Incluí el código de país, por ejemplo +54 9 11 1234-5678.";
-    contactValueLabel.innerHTML = `${isEmail ? "Tu correo electrónico" : "Tu número de WhatsApp"} <span aria-hidden="true">*</span>`;
+    contactValue.type = "tel";
+    contactValue.inputMode = "tel";
+    contactValue.autocomplete = "tel";
+    contactValue.placeholder = "+54 9 11 1234-5678";
+    contactValueHelp.textContent = "Incluí el código de país, por ejemplo +54 9 11 1234-5678.";
     if (contactValue.getAttribute("aria-invalid") === "true") {
       validateContact();
     }
@@ -3763,19 +3722,11 @@ html {
       reportLine("Objetivo principal", customGoal),
       reportLine("Herramientas digitales actuales", answer("digital-tools")),
       reportLine("Etapa del proyecto", answer("interest-stage")),
-      reportLine("Medio de contacto preferido", selectedContactMethod()),
       reportLine("Contacto", contactValue.value.trim()),
       reportLine("Interés en conocer servicios y trabajos", answer("more-info"))
     ];
     return lines.join("\n");
   }
-
-  form.querySelectorAll('input[name="contact-method"]').forEach((radio) => {
-    radio.addEventListener("change", () => {
-      updateContactInput();
-      clearSummary();
-    });
-  });
 
   form.querySelectorAll('input[name="goal"]').forEach((radio) => {
     radio.addEventListener("change", () => {
@@ -3791,11 +3742,7 @@ html {
     clearSummary();
   });
 
-  contactValue.addEventListener("blur", () => {
-    if (selectedContactMethod()) {
-      validateContact();
-    }
-  });
+  contactValue.addEventListener("blur", validateContact);
   contactValue.addEventListener("input", () => {
     if (contactValue.getAttribute("aria-invalid") === "true") {
       validateContact();
@@ -3803,12 +3750,7 @@ html {
     clearSummary();
   });
 
-  form.addEventListener("change", (event) => {
-    if (event.target.name === "contact-method") {
-      return;
-    }
-    clearSummary();
-  });
+  form.addEventListener("change", clearSummary);
 
   continueButton.addEventListener("click", () => {
     const errors = validateCurrentStep();
