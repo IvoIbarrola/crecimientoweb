@@ -2743,6 +2743,102 @@ html {
   display: none;
 }
 
+/* Movimiento y respuesta visual de las tarjetas */
+.carousel-track > * {
+  opacity: .72;
+  transform: translateY(5px) scale(.975);
+  transition:
+    opacity 420ms ease,
+    transform 560ms cubic-bezier(.2,.8,.2,1),
+    border-color 360ms ease,
+    box-shadow 420ms ease,
+    filter 420ms ease;
+  will-change: transform, opacity;
+}
+
+.carousel-track > *.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.carousel-track > *.is-active {
+  border-color: var(--accent);
+  box-shadow: 0 18px 42px rgba(18, 59, 43, .13), inset 0 3px var(--lime);
+  transform: translateY(-6px) scale(1.012);
+}
+
+.carousel-track > *.is-active:hover {
+  transform: translateY(-9px) scale(1.018);
+}
+
+.carousel-controls {
+  position: relative;
+}
+
+.carousel-controls::before {
+  position: absolute;
+  right: 150px;
+  bottom: 19px;
+  left: 0;
+  height: 2px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: var(--line);
+  content: "";
+}
+
+.carousel-controls::after {
+  position: absolute;
+  right: 150px;
+  bottom: 19px;
+  left: 0;
+  height: 2px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--accent), var(--lime));
+  content: "";
+  transform: scaleX(var(--carousel-progress, 0));
+  transform-origin: left;
+  transition: transform 520ms cubic-bezier(.2,.8,.2,1);
+  pointer-events: none;
+}
+
+.carousel-status {
+  transition: color 240ms ease, transform 240ms ease;
+}
+
+.carousel-arrow {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-arrow::before {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--lime);
+  content: "";
+  opacity: 0;
+  transform: scale(.35);
+  transition: opacity 240ms ease, transform 320ms cubic-bezier(.2,.8,.2,1);
+}
+
+.carousel-arrow:hover:not(:disabled)::before {
+  opacity: .18;
+  transform: scale(1);
+}
+
+.carousel-arrow:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.06);
+}
+
+.carousel-arrow:active:not(:disabled) {
+  transform: scale(.94);
+}
+
+.carousel-arrow:disabled {
+  opacity: .28;
+}
+
 .carousel-track > .service-card {
   flex: 0 0 calc((100% - 36px) / 3);
   min-width: 0;
@@ -2859,7 +2955,22 @@ html {
     scroll-behavior: auto;
   }
 
-  .carousel-arrow {
+  .carousel-track > *,
+  .carousel-track > *.is-visible,
+  .carousel-track > *.is-active {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    will-change: auto;
+  }
+
+  .carousel-controls::after {
+    transition: none;
+  }
+
+  .carousel-arrow,
+  .carousel-arrow::before,
+  .carousel-status {
     transition: none;
   }
 }
@@ -3959,12 +4070,32 @@ html {
       const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
       const atStart = track.scrollLeft <= 3;
       const atEnd = track.scrollLeft >= maxScroll - 3;
-      const current = Math.min(cards.length, Math.max(1,
-        cards.findIndex((card) => card.offsetLeft >= track.scrollLeft + 4) + 1
-      ));
+      const trackBounds = track.getBoundingClientRect();
+      const trackCenter = trackBounds.left + trackBounds.width / 2;
+      let activeIndex = 0;
+      let closestDistance = Infinity;
+
+      cards.forEach((card, index) => {
+        const bounds = card.getBoundingClientRect();
+        const visibleWidth = Math.max(0, Math.min(bounds.right, trackBounds.right) - Math.max(bounds.left, trackBounds.left));
+        const visibility = visibleWidth / Math.max(1, bounds.width);
+        const distance = Math.abs((bounds.left + bounds.right) / 2 - trackCenter);
+        card.classList.toggle("is-visible", visibility > .12);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          activeIndex = index;
+        }
+      });
+
+      cards.forEach((card, index) => {
+        card.classList.toggle("is-active", index === activeIndex);
+      });
+
+      const current = activeIndex + 1;
       previous.disabled = atStart;
       next.disabled = atEnd;
       status.textContent = String(current).padStart(2, "0") + " / " + String(cards.length).padStart(2, "0");
+      carousel.style.setProperty("--carousel-progress", maxScroll > 0 ? String(track.scrollLeft / maxScroll) : "1");
     }
 
     function move(direction) {
