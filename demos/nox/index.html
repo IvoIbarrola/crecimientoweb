@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Una nueva experiencia digital para NOX: accesorios de acero quirúrgico, tienda y gestión en un mismo lugar.">
+  <meta name="theme-color" content="#090909">
+  <title>NOX — Accesorios con otra energía</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="nox.css">
+  <script src="nox.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="demo-banner">
+    <span>Concepto de rediseño para NOX</span>
+    <span>Catálogo, carrito y gestión son demostrativos · Sin backend ni pagos reales</span>
+  </div>
+  <div class="scroll-progress" aria-hidden="true"><span data-progress></span></div>
+
+  <section id="store-view">
+    <header class="store-header">
+      <nav class="store-nav" aria-label="Navegación principal">
+        <a class="wordmark" href="#inicio" aria-label="NOX, ir al inicio">NOX<span class="wordmark-mark">✳</span></a>
+        <div class="store-nav-links">
+          <a href="#piezas">Piezas</a>
+          <a href="#coleccion">Colección</a>
+          <a href="#universo">Universo NOX</a>
+          <a href="#comunidad">Comunidad</a>
+        </div>
+        <div class="nav-actions">
+          <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Cambiar a tema claro">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.2A8.4 8.4 0 0 1 8.8 3.8 8.6 8.6 0 1 0 20.2 15.2Z"/></svg>
+            <span data-theme-label>Oscuro</span>
+          </button>
+          <button class="audio-toggle" type="button" data-audio-toggle aria-pressed="false" aria-label="Activar audio ambiente">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4h4l5 4V6l-5 4H4Z"/><path d="M17 9a5 5 0 0 1 0 6M19.5 6.5a9 9 0 0 1 0 11"/></svg>
+            <span data-audio-label>Audio off</span>
+          </button>
+          <button class="bag-button" type="button" data-open-cart aria-label="Abrir bolsa, 0 productos">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l1 12H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+            <span class="bag-count" data-cart-count>0</span>
+          </button>
+          <button class="admin-entry" type="button" data-view="admin">Gestionar <span aria-hidden="true">↗</span></button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section class="hero" id="inicio">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="eyebrow-line"></span> Acero quirúrgico · Hecho a mano</p>
+          <h1>Tu lado<br>más <em>NOX.</em></h1>
+          <p class="hero-description">Accesorios que no piden permiso. Piezas para llevar tu propia intensidad, todos los días.</p>
+          <div class="hero-actions">
+            <a class="button button-light" href="#coleccion">Descubrir piezas <span aria-hidden="true">↘</span></a>
+            <a class="text-link" href="#universo">Conocé nuestra esencia <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="hero-footnote"><span class="hero-index">01 / 04</span><span>Buenos Aires · Desde 2022</span></div>
+        </div>
+        <div class="hero-visual reveal">
+          <img src="https://images.pexels.com/photos/40608221/pexels-photo-40608221/free-photo-of-gothic-fashion-portrait-with-black-dress.jpeg?w=1200" alt="Retrato de estilo gótico con collar y joyería oscura" fetchpriority="high">
+          <div class="hero-image-note"><span class="note-cross" aria-hidden="true">✳</span><span>Wear<br>your edge.</span></div>
+          <span class="hero-vertical-label">NOX STUDIO · PIEZAS CON ACTITUD</span>
+        </div>
+        <a class="scroll-cue" href="#coleccion"><span></span> Deslizá para explorar</a>
+      </section>
+
+      <div class="ticker" aria-label="Piezas hechas a mano en acero quirúrgico">
+        <div class="ticker-track" aria-hidden="true">
+          <span>HECHO A MANO</span><b>✳</b><span>ACERO QUIRÚRGICO</span><b>✳</b><span>NOX ES ACTITUD</span><b>✳</b><span>HECHO A MANO</span><b>✳</b><span>ACERO QUIRÚRGICO</span><b>✳</b><span>NOX ES ACTITUD</span><b>✳</b>
+        </div>
+      </div>
+
+      <section class="jewelry-rail section-pad" id="piezas" aria-labelledby="jewelry-rail-title">
+        <div class="section-top reveal">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> En escena · Selección NOX</p>
+            <h2 id="jewelry-rail-title">La noche, <em>pieza por pieza.</em></h2>
+          </div>
+          <p class="section-intro">Elegí una pieza para verla de cerca. Cada objeto está hecho a mano para llevarlo a tu manera.</p>
+        </div>
+        <div class="jewelry-rail-stage">
+          <figure class="jewelry-rail-feature">
+            <img data-rail-feature-image src="https://images.pexels.com/photos/16124744/pexels-photo-16124744.jpeg?w=1000" alt="Collar oscuro de cadena, imagen ilustrativa" loading="eager">
+            <span class="jewelry-rail-frame" aria-hidden="true"></span>
+            <figcaption><span data-rail-feature-index>01 / 04</span><span>PIEZA EN FOCO</span></figcaption>
+          </figure>
+          <div class="jewelry-rail-details" aria-live="polite" aria-atomic="true">
+            <p class="eyebrow"><span class="eyebrow-line"></span> <span data-rail-category>Collares</span></p>
+            <h3 data-rail-name>Collar Nox</h3>
+            <p class="jewelry-rail-description" data-rail-description>Cadena protagonista · 45 cm</p>
+            <div class="jewelry-rail-materials"><span>Acero quirúrgico</span><span>Hecho a mano</span></div>
+            <div class="jewelry-rail-purchase">
+              <strong data-rail-price>$ 18.000</strong>
+              <button class="button button-light jewelry-rail-add" type="button" data-add-product="nox">Sumar a mi bolsa <span aria-hidden="true">↗</span></button>
+            </div>
+            <div class="jewelry-rail-controls" aria-label="Controles de piezas">
+              <button type="button" data-rail-previous aria-label="Ver pieza anterior"><span aria-hidden="true">←</span></button>
+              <span data-rail-position aria-live="polite">01 / 04</span>
+              <button type="button" data-rail-next aria-label="Ver pieza siguiente"><span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="jewelry-rail-track" data-jewelry-rail role="group" aria-label="Elegir una pieza destacada"></div>
+      </section>
+
+      <section class="collection section-pad" id="coleccion">
+        <div class="section-top reveal">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-line"></span> Objetos de deseo · 001</p>
+            <h2>Elegí tu <em>armadura.</em></h2>
+          </div>
+          <p class="section-intro">Piezas que hablan antes que vos. Diseñadas para combinarse, regalarse y hacerlas tuyas.</p>
+        </div>
+        <div class="collection-toolbar">
+          <div class="filter-list" role="group" aria-label="Filtrar productos">
+            <button type="button" class="filter-chip" data-filter="todos" aria-pressed="true">Todo <span data-filter-count="todos"></span></button>
+            <button type="button" class="filter-chip" data-filter="collares" aria-pressed="false">Collares</button>
+            <button type="button" class="filter-chip" data-filter="aros" aria-pressed="false">Aros</button>
+            <button type="button" class="filter-chip" data-filter="pulseras" aria-pressed="false">Pulseras</button>
+          </div>
+          <span class="collection-count"><span data-visible-count>08</span> piezas</span>
+        </div>
+        <div class="product-grid" data-product-grid aria-live="polite"></div>
+        <div class="collection-end">
+          <span class="ornament" aria-hidden="true">✳</span>
+          <p>Cada pieza tiene su propia historia.<br><a href="https://www.instagram.com/nox.arg/" target="_blank" rel="noopener noreferrer">La próxima puede ser la tuya ↗</a></p>
+        </div>
+      </section>
+
+      <section class="category-section" aria-label="Explorar por categoría">
+        <a class="category-tile category-necklaces" href="#coleccion" data-category-link="collares">
+          <img src="https://images.pexels.com/photos/16124744/pexels-photo-16124744.jpeg?w=1000" alt="" loading="lazy">
+          <span class="category-overlay"></span><span class="category-caption"><small>01 / PARA LLEVAR CERCA</small><strong>Collares <i>↗</i></strong></span>
+        </a>
+        <a class="category-tile category-earrings" href="#coleccion" data-category-link="aros">
+          <img src="https://images.pexels.com/photos/30936712/pexels-photo-30936712/free-photo-of-elegant-gothic-jewelry-with-intricate-details.jpeg?w=1000" alt="" loading="lazy">
+          <span class="category-overlay"></span><span class="category-caption"><small>02 / DECIRLO TODO</small><strong>Aros <i>↗</i></strong></span>
+        </a>
+        <a class="category-tile category-bracelets" href="#coleccion" data-category-link="pulseras">
+          <img src="https://images.pexels.com/photos/32305655/pexels-photo-32305655/free-photo-of-black-and-white-artistic-portrait-with-jewelry.jpeg?w=1000" alt="" loading="lazy">
+          <span class="category-overlay"></span><span class="category-caption"><small>03 / HASTA EL ÚLTIMO DETALLE</small><strong>Pulseras <i>↗</i></strong></span>
+        </a>
+      </section>
+
+      <section class="manifesto section-pad" id="universo">
+        <div class="manifesto-image reveal">
+          <img src="https://images.pexels.com/photos/30936712/pexels-photo-30936712/free-photo-of-elegant-gothic-jewelry-with-intricate-details.jpeg?w=1000" alt="Detalle de joyería gótica en capas y anillos artesanales" loading="lazy">
+          <span class="image-stamp" aria-hidden="true">N<br>✳<br>X</span>
+        </div>
+        <div class="manifesto-copy reveal">
+          <p class="eyebrow"><span class="eyebrow-line"></span> Una marca alternativa</p>
+          <h2>No es un accesorio.<br>Es <em>tu señal.</em></h2>
+          <p>NOX nace para quienes eligen expresarse sin pedir permiso. Diseñamos y armamos cada pieza a mano, en acero quirúrgico: un material pensado para acompañarte, resistir y seguir brillando.</p>
+          <a class="button button-outline" href="https://www.instagram.com/nox.arg/" target="_blank" rel="noopener noreferrer">Entrá al universo NOX <span aria-hidden="true">↗</span></a>
+          <div class="manifesto-stat"><strong>100%</strong><span>hecho a mano<br>en Buenos Aires</span></div>
+        </div>
+      </section>
+
+      <section class="values-strip" aria-label="Información de compra">
+        <article class="value-item"><span class="value-icon" aria-hidden="true">✳</span><div><strong>Acero quirúrgico</strong><p>Material noble, hecho para durar.</p></div></article>
+        <article class="value-item"><span class="value-icon" aria-hidden="true">↗</span><div><strong>Envíos a todo el país</strong><p>Recibí tu NOX donde estés.</p></div></article>
+        <article class="value-item"><span class="value-icon" aria-hidden="true">↯</span><div><strong>Hasta 2 cuotas</strong><p>10% OFF abonando por transferencia.</p></div></article>
+      </section>
+
+      <section class="community section-pad" id="comunidad">
+        <div class="community-copy reveal">
+          <p class="eyebrow"><span class="eyebrow-line"></span> La noche nos queda bien</p>
+          <h2>NOX en<br>tu <em>mundo.</em></h2>
+          <p>Inspiración, nuevas piezas y otras formas de llevarlas. Nos encontramos del otro lado.</p>
+          <a class="button button-light" href="https://www.instagram.com/nox.arg/" target="_blank" rel="noopener noreferrer">Seguinos en Instagram <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="community-grid reveal">
+          <a href="https://www.instagram.com/nox.arg/" target="_blank" rel="noopener noreferrer" aria-label="Ver NOX en Instagram">
+            <img src="https://images.pexels.com/photos/16124744/pexels-photo-16124744.jpeg?w=650" alt="Inspiración NOX: collar oscuro de cadena" loading="lazy"><span aria-hidden="true">↗</span>
+          </a>
+          <a href="https://www.instagram.com/nox.arg/" target="_blank" rel="noopener noreferrer" aria-label="Ver NOX en Instagram">
+            <img src="https://images.pexels.com/photos/30936712/pexels-photo-30936712/free-photo-of-elegant-gothic-jewelry-with-intricate-details.jpeg?w=650" alt="Inspiración NOX: anillos y cadenas de estética gótica" loading="lazy"><span aria-hidden="true">↗</span>
+          </a>
+          <a href="https://www.instagram.com/nox.arg/" target="_blank" rel="noopener noreferrer" aria-label="Ver NOX en Instagram">
+            <img src="https://images.pexels.com/photos/32305655/pexels-photo-32305655/free-photo-of-black-and-white-artistic-portrait-with-jewelry.jpeg?w=650" alt="Inspiración NOX: retrato alternativo con anillos y pulseras" loading="lazy"><span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="closing-banner">
+        <span class="closing-cross" aria-hidden="true">✳</span>
+        <p class="eyebrow">Tu historia. Tus reglas.</p>
+        <h2>Vestí lo que<br>te <em>hace vos.</em></h2>
+        <a class="button button-light" href="#coleccion">Encontrá tu pieza <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer class="store-footer">
+      <a class="wordmark" href="#inicio">NOX<span class="wordmark-mark">✳</span></a>
+      <p>Acero quirúrgico. Piezas hechas a mano. Actitud propia.</p>
+      <div><a href="https://www.instagram.com/nox.arg/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="#coleccion">Colección ↑</a></div>
+      <small>Concepto de rediseño · <a href="https://www.pexels.com/search/gothic%20jewelry/" target="_blank" rel="noopener noreferrer">Imágenes de referencia de Pexels</a>; no corresponden al catálogo de NOX</small>
+    </footer>
+  </section>
+
+  <section id="admin-view" hidden>
+    <div class="admin-shell">
+      <aside class="admin-sidebar">
+        <a class="admin-brand" href="#admin" data-view="admin"><span class="admin-brand-mark">N</span><span>NOX <small>STUDIO</small></span></a>
+        <p class="admin-side-label">Espacio de trabajo</p>
+        <nav class="admin-side-nav" aria-label="Secciones de gestión">
+          <a href="#panel-resumen" data-admin-nav="resumen" class="is-current"><span aria-hidden="true">▦</span>Resumen</a>
+          <a href="#panel-pedidos" data-admin-nav="pedidos"><span aria-hidden="true">▤</span>Pedidos <i data-pending-badge>2</i></a>
+          <a href="#panel-productos" data-admin-nav="productos"><span aria-hidden="true">◈</span>Productos</a>
+          <a href="#panel-stock" data-admin-nav="stock"><span aria-hidden="true">◫</span>Stock</a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="demo-warning"><span aria-hidden="true">✳</span><div><strong>Modo demostración</strong><p>Los cambios son temporales y se pierden al recargar.</p></div></div>
+          <button class="back-to-store" type="button" data-view="store"><span aria-hidden="true">←</span> Volver a la tienda</button>
+        </div>
+      </aside>
+      <div class="admin-main">
+        <header class="admin-topbar">
+          <div class="admin-crumb">NOX Studio <span>/</span> <strong data-admin-crumb>Resumen</strong></div>
+          <div class="admin-top-actions"><span class="sample-pill"><i></i> Datos de muestra</span><button type="button" class="store-preview-button" data-view="store">Ver tienda ↗</button></div>
+        </header>
+        <main class="admin-content" id="panel-resumen">
+          <section class="admin-section" data-admin-section="resumen">
+            <div class="admin-heading">
+              <div><p class="admin-eyebrow">LUNES, 02 DE NOVIEMBRE</p><h1>Hola, NOX <span>✳</span></h1><p>Un vistazo a lo que está pasando con tu tienda.</p></div>
+              <button class="admin-primary-button" type="button" data-jump="productos">＋ Nuevo producto</button>
+            </div>
+            <div class="metric-grid">
+              <article class="metric-card"><span>Ventas del mes</span><strong data-metric-sales>$ 482.500</strong><small><i>↑ 12%</i> vs. mes anterior · ejemplo</small><span class="metric-symbol" aria-hidden="true">↗</span></article>
+              <article class="metric-card"><span>Pedidos activos</span><strong data-metric-orders>4</strong><small>2 pendientes de preparar</small><span class="metric-symbol" aria-hidden="true">▤</span></article>
+              <article class="metric-card"><span>Productos activos</span><strong data-metric-products>8</strong><small>En tu catálogo de muestra</small><span class="metric-symbol" aria-hidden="true">◈</span></article>
+              <article class="metric-card"><span>Stock por revisar</span><strong data-metric-low>2</strong><small>Unidades con pocas existencias</small><span class="metric-symbol" aria-hidden="true">◫</span></article>
+            </div>
+            <div class="admin-dashboard-grid">
+              <section class="admin-card admin-orders-card">
+                <div class="admin-card-heading"><div><h2>Pedidos recientes</h2><p>Seguí cada compra de principio a fin.</p></div><button class="subtle-link" type="button" data-jump="pedidos">Ver todos <span aria-hidden="true">→</span></button></div>
+                <div class="table-wrap"><table class="admin-table"><thead><tr><th>Pedido</th><th>Cliente</th><th>Detalle</th><th>Total</th><th>Estado</th></tr></thead><tbody data-recent-orders></tbody></table></div>
+              </section>
+              <section class="admin-card admin-stock-card">
+                <div class="admin-card-heading"><div><h2>Stock para revisar</h2><p>Productos con 5 unidades o menos.</p></div><button class="subtle-link" type="button" data-jump="stock">Inventario <span aria-hidden="true">→</span></button></div>
+                <div class="low-stock-list" data-low-stock-list></div>
+              </section>
+            </div>
+            <p class="admin-disclaimer">Este tablero usa datos ficticios. La gestión real de pedidos, stock y cobros se conectaría con la plataforma de tienda elegida.</p>
+          </section>
+
+          <section class="admin-section" data-admin-section="pedidos" hidden id="panel-pedidos">
+            <div class="admin-heading"><div><p class="admin-eyebrow">OPERACIÓN</p><h1>Pedidos</h1><p>Buscá compras y actualizá su estado de preparación.</p></div></div>
+            <div class="admin-card full-card">
+              <div class="admin-tools">
+                <div class="status-filters" role="group" aria-label="Filtrar pedidos por estado">
+                  <button type="button" data-order-filter="todos" aria-pressed="true">Todos</button><button type="button" data-order-filter="Pendiente" aria-pressed="false">Pendientes</button><button type="button" data-order-filter="Preparando" aria-pressed="false">Preparando</button><button type="button" data-order-filter="Listo" aria-pressed="false">Listos</button>
+                </div>
+                <label class="search-wrap"><span class="visually-hidden">Buscar pedido</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg><input type="search" data-order-search placeholder="Buscar cliente o producto"></label>
+              </div>
+              <div class="table-wrap"><table class="admin-table"><thead><tr><th>Pedido</th><th>Fecha</th><th>Cliente</th><th>Detalle</th><th>Total</th><th>Estado</th></tr></thead><tbody data-order-list></tbody></table></div>
+              <p class="empty-state" data-order-empty hidden>No hay pedidos que coincidan con esta búsqueda.</p>
+            </div>
+          </section>
+
+          <section class="admin-section" data-admin-section="productos" hidden id="panel-productos">
+            <div class="admin-heading"><div><p class="admin-eyebrow">CATÁLOGO</p><h1>Productos</h1><p>Actualizá precios, revisá el catálogo o sumá una pieza nueva.</p></div></div>
+            <div class="admin-card full-card">
+              <div class="admin-card-heading"><div><h2>Catálogo de muestra</h2><p>Los cambios se reflejan en la tienda mientras esta pestaña permanezca abierta.</p></div><span class="sample-pill"><i></i> Local · no guardado</span></div>
+              <div class="table-wrap"><table class="admin-table product-admin-table"><thead><tr><th>Producto</th><th>Categoría</th><th>Precio</th><th>Stock</th><th>Visibilidad</th></tr></thead><tbody data-product-list></tbody></table></div>
+            </div>
+            <div class="admin-card add-product-card">
+              <div class="admin-card-heading"><div><h2>Agregar una pieza</h2><p>Se agrega únicamente a esta demostración local.</p></div></div>
+              <form class="add-product-form" data-product-form>
+                <label>Nombre<input name="name" required maxlength="45" placeholder="Ej. Collar Eclipse"></label>
+                <label>Categoría<select name="category" required><option value="collares">Collares</option><option value="aros">Aros</option><option value="pulseras">Pulseras</option></select></label>
+                <label>Precio (ARS)<input name="price" type="number" min="1" step="1" required placeholder="18000"></label>
+                <label>Stock inicial<input name="stock" type="number" min="0" step="1" required value="5"></label>
+                <label class="form-wide">Foto (URL opcional)<input name="image" type="url" placeholder="https://…"><small>Dejá vacío para usar una imagen ilustrativa.</small></label>
+                <div class="form-wide form-submit-row"><button class="admin-primary-button" type="submit">Agregar al catálogo</button><p class="form-feedback" data-product-feedback aria-live="polite"></p></div>
+              </form>
+            </div>
+          </section>
+
+          <section class="admin-section" data-admin-section="stock" hidden id="panel-stock">
+            <div class="admin-heading"><div><p class="admin-eyebrow">INVENTARIO</p><h1>Stock</h1><p>Actualizá existencias y detectá rápido qué piezas necesitan reposición.</p></div></div>
+            <div class="admin-card full-card">
+              <div class="admin-card-heading"><div><h2>Existencias por producto</h2><p>Una cantidad baja se destaca para que puedas verla fácilmente.</p></div><span class="low-stock-tag"><span></span> Revisar pronto</span></div>
+              <div class="table-wrap"><table class="admin-table stock-admin-table"><thead><tr><th>Producto</th><th>Categoría</th><th>SKU demo</th><th>Unidades disponibles</th><th>Acción</th></tr></thead><tbody data-stock-list></tbody></table></div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </section>
+
+  <dialog class="cart-dialog" data-cart-dialog aria-labelledby="cart-title">
+    <div class="cart-dialog-header"><div><p class="admin-eyebrow">SELECCIÓN NOX</p><h2 id="cart-title">Tu bolsa</h2></div><button class="dialog-close" type="button" data-close-cart aria-label="Cerrar bolsa">×</button></div>
+    <div class="cart-lines" data-cart-lines></div>
+    <div class="cart-empty" data-cart-empty><span aria-hidden="true">✳</span><p>Tu próxima pieza te está esperando.</p><button class="text-link" type="button" data-close-cart>Volver a la colección ↗</button></div>
+    <div class="cart-dialog-footer" data-cart-footer hidden><div class="cart-total"><span>Total de muestra</span><strong data-cart-total>$ 0</strong></div><button class="button button-light checkout-demo" type="button" data-demo-checkout>Continuar <span aria-hidden="true">↗</span></button><p>Compra ilustrativa · no se procesan pagos.</p></div>
+  </dialog>
+  <div class="toast-message" role="status" aria-live="polite" data-toast></div>
+</body>
+</html>
